@@ -368,7 +368,7 @@
           
           A题题目大意：给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。
 分析水题。。。
-code123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#12
+code123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;     int n;     while(cin &gt;&gt; n) &#123;        int l[150], r[150];        for(int i = 1; i &lt
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -530,7 +530,7 @@ code123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using na
           前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。
 素数筛筛选区间内的素数，例如：构造1~n之间的素数表。
 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。
-1234int m = sqrt(n+0.5);memset(vis, 0, s
+1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &lt;= m; i++) if(!vis[i])     for(int j = i*i; j &lt;= n; j += i) vis[j] 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -691,7 +691,9 @@ code123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using na
           
           前言数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！
 欧几里德算法这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。
-123int gcd(int a, int b) &#123;    return b == 0 ? a : gcd(
+123int gcd(int a, int b) &#123;    return b == 0 ? a : gcd(b, a%b);&#125;
+同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：
+123int lcm(int a, int b) &#123;    return a/gcd(a,
           ...
           <!--noindex-->
           <div class="post-button text-center">
