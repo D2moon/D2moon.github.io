@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://weibolu.github.io/sitemap.xml
-Sitemap: http://weibolu.github.io/baidusitemap.xml
+Sitemap: http://weibolu.online/sitemap.xml
+Sitemap: http://weibolu.online/baidusitemap.xml
