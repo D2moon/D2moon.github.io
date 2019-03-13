@@ -1,6 +1,7 @@
 # hexo robots.txt
 User-agent: *
 Allow: /
+Allow: /home/
 Allow: /archives/
 Allow: /categories/
 Allow: /tags/
