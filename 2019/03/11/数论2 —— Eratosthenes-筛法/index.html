@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 素数筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[">
+<meta name="description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 E筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[i">
 <meta name="keywords" content="基础数论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数论2 —— Erat筛法 &amp; 取模小技巧">
+<meta property="og:title" content="数论2 —— 筛法 &amp; 取模小技巧">
 <meta property="og:url" content="https://weibolu.online/2019/03/11/数论2 —— Eratosthenes-筛法/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 素数筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[">
+<meta property="og:description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 E筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T16:34:51.711Z">
+<meta property="og:updated_time" content="2019-03-19T12:37:33.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数论2 —— Erat筛法 &amp; 取模小技巧">
-<meta name="twitter:description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 素数筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[">
+<meta name="twitter:title" content="数论2 —— 筛法 &amp; 取模小技巧">
+<meta name="twitter:description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 E筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[i">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>数论2 —— Erat筛法 & 取模小技巧 | 微波炉 de Blogs</title>
+  <title>数论2 —— 筛法 & 取模小技巧 | 微波炉 de Blogs</title>
   
 
 
@@ -288,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数论2 —— Erat筛法 & 取模小技巧</h1>
+          <h1 class="post-title" itemprop="name headline">数论2 —— 筛法 & 取模小技巧</h1>
         
 
         <div class="post-meta">
@@ -340,7 +340,7 @@
 
           
           
-             <span id="/2019/03/11/数论2 —— Eratosthenes-筛法/" class="leancloud_visitors" data-flag-title="数论2 —— Erat筛法 & 取模小技巧">
+             <span id="/2019/03/11/数论2 —— Eratosthenes-筛法/" class="leancloud_visitors" data-flag-title="数论2 —— 筛法 & 取模小技巧">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -372,10 +372,12 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。</p>
-<h2 id="素数筛"><a href="#素数筛" class="headerlink" title="素数筛"></a>素数筛</h2><p>筛选区间内的素数，例如：构造1~n之间的素数表。</p>
+<h2 id="E筛"><a href="#E筛" class="headerlink" title="E筛"></a>E筛</h2><p>筛选区间内的素数，例如：构造1~n之间的素数表。</p>
 <h3 id="算法思想及代码"><a href="#算法思想及代码" class="headerlink" title="算法思想及代码"></a>算法思想及代码</h3><p>对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> m = <span class="built_in">sqrt</span>(n+<span class="number">0.5</span>);</span><br><span class="line"><span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span> vis);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= m; i++) <span class="keyword">if</span>(!vis[i]) </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i*i; j &lt;= n; j += i) vis[j] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 <p>算法关键的地方在于尽可能的缩短遍历的长度，否则会影响效率。</p>
+<h2 id="线性筛"><a href="#线性筛" class="headerlink" title="线性筛"></a>线性筛</h2><p>比E筛的速度更快一点，可以达到O(n)</p>
+<h3 id="算法如下"><a href="#算法如下" class="headerlink" title="算法如下"></a>算法如下</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">bool</span> prime[maxn];      <span class="comment">//</span></span><br><span class="line"><span class="keyword">int</span> p[maxn], tot;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tot = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(prime, <span class="number">0</span>, <span class="keyword">sizeof</span> prime);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxn; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!prime[i]) p[tot++] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tot &amp;&amp; i * p[j] &lt; maxn; j++) &#123;</span><br><span class="line">            prime[i * p[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(i % p[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="同余与模算术"><a href="#同余与模算术" class="headerlink" title="同余与模算术"></a>同余与模算术</h2><p>根据mod的特性，容易得到以下公式：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(a+b) mod n = ((a mod n) + (b mod n)) mod n;</span><br><span class="line">(a-b) mod n = ((a mod n) - (b mod n) + n) mod n;</span><br><span class="line">(ab) mod n = (a mod n)(b mod n) mod n;</span><br></pre></td></tr></table></figure></p>
 <p>注意中间结果可能溢出，可进行强制类型转换。</p>
 <p><strong>对于指数数据取mod， 例如求a的n次幂 mod m</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pow_mod</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> x = pow_mod(a, n/<span class="number">2</span>, m);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = (<span class="keyword">long</span> <span class="keyword">long</span>)x * x % m;</span><br><span class="line">    <span class="keyword">if</span>(n % <span class="number">2</span> == <span class="number">1</span>) ans = ans * a % m;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -452,7 +454,7 @@
           
 
   
-    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/03/11/数论2 —— Eratosthenes-筛法/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/03/11/数论2 —— Eratosthenes-筛法/&title=数论2 —— Erat筛法 & 取模小技巧" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
+    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/03/11/数论2 —— Eratosthenes-筛法/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/03/11/数论2 —— Eratosthenes-筛法/&title=数论2 —— 筛法 & 取模小技巧" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
 
 
   
@@ -505,7 +507,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -516,7 +518,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -560,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#素数筛"><span class="nav-number">2.</span> <span class="nav-text">素数筛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想及代码"><span class="nav-number">2.1.</span> <span class="nav-text">算法思想及代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同余与模算术"><span class="nav-number">3.</span> <span class="nav-text">同余与模算术</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E筛"><span class="nav-number">2.</span> <span class="nav-text">E筛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想及代码"><span class="nav-number">2.1.</span> <span class="nav-text">算法思想及代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性筛"><span class="nav-number">3.</span> <span class="nav-text">线性筛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法如下"><span class="nav-number">3.1.</span> <span class="nav-text">算法如下</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同余与模算术"><span class="nav-number">4.</span> <span class="nav-text">同余与模算术</span></a></li></ol></div>
             
 
           </div>
