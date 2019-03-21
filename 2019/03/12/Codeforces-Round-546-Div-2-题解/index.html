@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="A题题目大意：给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。 分析水题。。。 code123456789101112131415161718192021222324#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;     int n;     while(cin &amp;gt;&amp;gt; n) &amp;#123;">
+<meta name="description" content="开个新专题，把cf的题目都记录下来，顺便上上分，舒服。 A题题目大意：给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。 分析水题。。。 code123456789101112131415161718192021222324#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;     int n;     whil">
 <meta name="keywords" content="codeforces">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round #546 (Div. 2) 题解">
 <meta property="og:url" content="https://weibolu.online/2019/03/12/Codeforces-Round-546-Div-2-题解/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="A题题目大意：给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。 分析水题。。。 code123456789101112131415161718192021222324#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;     int n;     while(cin &amp;gt;&amp;gt; n) &amp;#123;">
+<meta property="og:description" content="开个新专题，把cf的题目都记录下来，顺便上上分，舒服。 A题题目大意：给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。 分析水题。。。 code123456789101112131415161718192021222324#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;     int n;     whil">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-12T13:17:06.928Z">
+<meta property="og:updated_time" content="2019-03-21T03:38:03.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round #546 (Div. 2) 题解">
-<meta name="twitter:description" content="A题题目大意：给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。 分析水题。。。 code123456789101112131415161718192021222324#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;     int n;     while(cin &amp;gt;&amp;gt; n) &amp;#123;">
+<meta name="twitter:description" content="开个新专题，把cf的题目都记录下来，顺便上上分，舒服。 A题题目大意：给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。 分析水题。。。 code123456789101112131415161718192021222324#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;     int n;     whil">
 
 
 
@@ -371,7 +371,8 @@
       
 
       
-        <h2 id="A题"><a href="#A题" class="headerlink" title="A题"></a>A题</h2><h3 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h3><p>给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。</p>
+        <p>开个新专题，把cf的题目都记录下来，顺便上上分，舒服。</p>
+<h2 id="A题"><a href="#A题" class="headerlink" title="A题"></a>A题</h2><h3 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h3><p>给定n个章节的区间和现在的阅读进度，输出尚未读完的章节。</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>水题。。。</p>
 <h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> n;</span><br><span class="line">     <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n) &#123;</span><br><span class="line">        <span class="keyword">int</span> l[<span class="number">150</span>], r[<span class="number">150</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; l[i] &gt;&gt; r[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> now;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; now;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(l[i] &gt;= now) ans++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(r[i] &gt;= now) ans++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="B题"><a href="#B题" class="headerlink" title="B题"></a>B题</h2><h3 id="题目大意：-1"><a href="#题目大意：-1" class="headerlink" title="题目大意："></a>题目大意：</h3><p>有n个井，井下有钥匙，井上有石头，单位时间内只能选择A:向相邻位置移动，B:将一块石头移向旁边一个井，C:打开一个没有石头的井盖取出钥匙，三中操作中的一种。给出起始所在的井盖位置，求最短用时多少可以取出所有钥匙。</p>
