@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weibolu.online/"/>
-  <updated>2019-03-26T09:31:37.319Z</updated>
+  <updated>2019-04-02T15:35:43.677Z</updated>
   <id>https://weibolu.online/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速输入输出流</title>
+    <link href="https://weibolu.online/2019/04/02/%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/"/>
+    <id>https://weibolu.online/2019/04/02/快速输入输出流/</id>
+    <published>2019-04-02T15:31:28.000Z</published>
+    <updated>2019-04-02T15:35:43.677Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> SZ = <span class="number">1</span> &lt;&lt; <span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fastio</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> inbuf[SZ];</span><br><span class="line">    <span class="keyword">char</span> outbuf[SZ];</span><br><span class="line">    fastio()</span><br><span class="line">    &#123;</span><br><span class="line">        setvbuf(<span class="built_in">stdin</span>, inbuf, _IOFBF, SZ);</span><br><span class="line">        setvbuf(<span class="built_in">stdout</span>, outbuf, _IOFBF, SZ);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;io;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;li
+      
+    
+    </summary>
+    
+      <category term="ACM" scheme="https://weibolu.online/categories/ACM/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快速排序模板</title>
+    <link href="https://weibolu.online/2019/04/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://weibolu.online/2019/04/02/快速排序模板/</id>
+    <published>2019-04-02T15:31:03.000Z</published>
+    <updated>2019-04-02T15:35:04.989Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[i];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &gt;= x) j--;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[i++] = s[j];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &lt;= x) i++;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(l, i);</span><br><span class="line">        quick_sort(i+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;li
+      
+    
+    </summary>
+    
+      <category term="ACM" scheme="https://weibolu.online/categories/ACM/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>3-24博弈论训练</title>
@@ -88,9 +138,9 @@
       <category term="ACM" scheme="https://weibolu.online/categories/ACM/"/>
     
     
-      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
@@ -115,9 +165,9 @@
       <category term="ACM" scheme="https://weibolu.online/categories/ACM/"/>
     
     
-      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
@@ -195,9 +245,9 @@
       <category term="ACM" scheme="https://weibolu.online/categories/ACM/"/>
     
     
-      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
