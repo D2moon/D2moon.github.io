@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="微波炉 de Blogs">
 <meta property="og:description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 E筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:31:27.710Z">
+<meta property="og:updated_time" content="2019-04-15T16:47:43.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数论2 —— 筛法 &amp; 取模小技巧">
 <meta name="twitter:description" content="前言一个十分方便的筛法，可以根据对数字的需要更快速的进行枚举。 E筛筛选区间内的素数，例如：构造1~n之间的素数表。 算法思想及代码对于不超过n的所有非负整数p，删除2p,3p,4p……操作结束后，剩下的就是素数表。 1234int m = sqrt(n+0.5);memset(vis, 0, sizeof vis);for(int i = 2; i &amp;lt;= m; i++) if(!vis[i">
@@ -385,7 +385,7 @@
 <h2 id="同余与模算术"><a href="#同余与模算术" class="headerlink" title="同余与模算术"></a>同余与模算术</h2><p>根据mod的特性，容易得到以下公式：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(a+b) mod n = ((a mod n) + (b mod n)) mod n;</span><br><span class="line">(a-b) mod n = ((a mod n) - (b mod n) + n) mod n;</span><br><span class="line">(ab) mod n = (a mod n)(b mod n) mod n;</span><br></pre></td></tr></table></figure></p>
 <p>注意中间结果可能溢出，可进行强制类型转换。</p>
 <p><strong>对于指数数据取mod， 例如求a的n次幂 mod m</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pow_mod</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> x = pow_mod(a, n/<span class="number">2</span>, m);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = (<span class="keyword">long</span> <span class="keyword">long</span>)x * x % m;</span><br><span class="line">    <span class="keyword">if</span>(n % <span class="number">2</span> == <span class="number">1</span>) ans = ans * a % m;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>利用二分法来求解时，可将复杂度降低为O(long n)，就是这些内容啦。</p>
+<p>利用二分法来求解时，可将复杂度降低为O(log n)，就是这些内容啦。</p>
 
       
     </div>
@@ -511,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
