@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weibolu.online/"/>
-  <updated>2019-04-15T08:32:56.983Z</updated>
+  <updated>2019-04-15T09:05:12.672Z</updated>
   <id>https://weibolu.online/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速读入模板</title>
+    <link href="https://weibolu.online/2019/04/15/%E5%BF%AB%E9%80%9F%E8%AF%BB%E5%85%A5/"/>
+    <id>https://weibolu.online/2019/04/15/快速读入/</id>
+    <published>2019-04-15T12:57:02.000Z</published>
+    <updated>2019-04-15T09:05:12.672Z</updated>
+    
+    <content type="html"><![CDATA[<p>##针对acm中的一些输入问题：</p><p>###1.常见的就是用scanf和printf来代替cin、cout</p><p>###2.但是当侧式组数比较多时，方法1也不太好用了，这时候就有一种新的方法：快速读入</p><p>快速读入的本质其实是用读入字符来代替读入整数</p><p>比如，下面这个是常见的int和long long型数据的快速读入，十分好用，但要注意下不同环境中换行的符号不同。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> fastIO &#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> BUF_SIZE 100000</span></span><br><span class="line">    <span class="comment">//fread -&gt; read</span></span><br><span class="line">    <span class="keyword">bool</span> IOerror = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">nc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">char</span> buf[BUF_SIZE], *p1 = buf + BUF_SIZE, *pend = buf + BUF_SIZE;</span><br><span class="line">        <span class="keyword">if</span>(p1 == pend) &#123;</span><br><span class="line">            p1 = buf;</span><br><span class="line">            pend = buf + fread(buf, <span class="number">1</span>, BUF_SIZE, <span class="built_in">stdin</span>);</span><br><span class="line">            <span class="keyword">if</span>(pend == p1) &#123;</span><br><span class="line">                IOerror = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> *p1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">blank</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ch == <span class="string">' '</span> || ch == <span class="string">'\n'</span> || ch == <span class="string">'\r'</span> || ch == <span class="string">'\t'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> ch;</span><br><span class="line">        <span class="keyword">while</span>(blank(ch = nc()));</span><br><span class="line">        <span class="keyword">if</span>(IOerror)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">for</span>(x = ch - <span class="string">'0'</span>; (ch = nc()) &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>; x = x * <span class="number">10</span> + ch - <span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">readll</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> ch;</span><br><span class="line">        <span class="keyword">while</span>(blank(ch = nc()));</span><br><span class="line">        <span class="keyword">if</span>(IOerror)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">for</span>(x = ch - <span class="string">'0'</span>; (ch = nc()) &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>; x = x * <span class="number">10</span> + ch - <span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">undef</span> BUF_SIZE</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><h3 id="多种类型快速读入传送门"><a href="#多种类型快速读入传送门" class="headerlink" title="多种类型快速读入传送门"></a>多种类型快速读入传送门</h3><p><a href="https://blog.csdn.net/qq_36297813/article/details/87874335" target="_blank" rel="noopener">转载下找到的重载的快速读入</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##针对acm中的一些输入问题：&lt;/p&gt;
+&lt;p&gt;###1.常见的就是用scanf和printf来代替cin、cout&lt;/p&gt;
+&lt;p&gt;###2.但是当侧式组数比较多时，方法1也不太好用了，这时候就有一种新的方法：快速读入&lt;/p&gt;
+&lt;p&gt;快速读入的本质其实是用读入字符来代替读入
+      
+    
+    </summary>
+    
+      <category term="ACM快速算法" scheme="https://weibolu.online/categories/ACM%E5%BF%AB%E9%80%9F%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构 —— 树状数组</title>
@@ -37,9 +65,9 @@
       <category term="数据结构" scheme="https://weibolu.online/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -91,9 +119,9 @@
       <category term="数据结构" scheme="https://weibolu.online/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
