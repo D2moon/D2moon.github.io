@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weibolu.online/"/>
-  <updated>2019-04-15T17:38:52.223Z</updated>
+  <updated>2019-04-20T01:06:13.511Z</updated>
   <id>https://weibolu.online/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kmp算法</title>
+    <link href="https://weibolu.online/2019/04/16/kmp%E7%AE%97%E6%B3%95/"/>
+    <id>https://weibolu.online/2019/04/16/kmp算法/</id>
+    <published>2019-04-16T15:46:28.000Z</published>
+    <updated>2019-04-20T01:06:13.511Z</updated>
+    
+    <content type="html"><![CDATA[<p>##转载<br><a href="https://blog.csdn.net/I_believe_CWJ/article/details/80438240" target="_blank" rel="noopener">kmp讲解</a></p><p>##hint<br> 关键就在于next数组的使用。</p><p>##模板<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> next[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">kmp_next</span><span class="params">(<span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">-1</span> &amp;&amp; s[i] != s[k+<span class="number">1</span>]) k = next[k];</span><br><span class="line">        <span class="keyword">if</span>(s[i] == s[k+<span class="number">1</span>]) k++;</span><br><span class="line">        next[i] = k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">kmp</span><span class="params">(<span class="built_in">string</span> s1, <span class="built_in">string</span> s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">-1</span> &amp;&amp; s[i] != s[k+<span class="number">1</span>]) k = next[k];</span><br><span class="line">        <span class="keyword">if</span>(s1[i] == s2[k+<span class="number">1</span>]) k++;</span><br><span class="line">        <span class="keyword">if</span>(k == s2.size()) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##转载&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/I_believe_CWJ/article/details/80438240&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;kmp讲解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##hint&lt;br&gt;
+      
+    
+    </summary>
+    
+      <category term="字符串处理" scheme="https://weibolu.online/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/"/>
+    
+    
+      <category term="字符串处理" scheme="https://weibolu.online/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/"/>
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构 —— 线段树</title>
@@ -38,9 +66,9 @@
       <category term="数据结构" scheme="https://weibolu.online/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -93,9 +121,9 @@
       <category term="数据结构" scheme="https://weibolu.online/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -147,9 +175,9 @@
       <category term="数据结构" scheme="https://weibolu.online/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
