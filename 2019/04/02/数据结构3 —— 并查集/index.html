@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i++) cha[i] = i;&amp;#125;int findd(int a)&amp;#123;    if(cha[a] == a) return a;">
+<meta name="description" content="hint用于划分属性构造O(n)  查询近似O(1)1234567891011121314151617181920const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i++) cha[i] = i;&amp;#125;int findd(int a)&amp;#123;    if">
 <meta name="keywords" content="ACM模板,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构3 —— 并查集">
 <meta property="og:url" content="https://weibolu.online/2019/04/02/数据结构3 —— 并查集/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="1234567891011121314151617181920const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i++) cha[i] = i;&amp;#125;int findd(int a)&amp;#123;    if(cha[a] == a) return a;">
+<meta property="og:description" content="hint用于划分属性构造O(n)  查询近似O(1)1234567891011121314151617181920const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i++) cha[i] = i;&amp;#125;int findd(int a)&amp;#123;    if">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T02:49:27.371Z">
+<meta property="og:updated_time" content="2019-04-24T04:12:31.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构3 —— 并查集">
-<meta name="twitter:description" content="1234567891011121314151617181920const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i++) cha[i] = i;&amp;#125;int findd(int a)&amp;#123;    if(cha[a] == a) return a;">
+<meta name="twitter:description" content="hint用于划分属性构造O(n)  查询近似O(1)1234567891011121314151617181920const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i++) cha[i] = i;&amp;#125;int findd(int a)&amp;#123;    if">
 
 
 
@@ -375,7 +375,8 @@
       
 
       
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> cha[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cha[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findd</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cha[a] == a) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> findd(cha[a]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unite</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A = findd(a);</span><br><span class="line">    <span class="keyword">int</span> B = findd(b);</span><br><span class="line">    <span class="keyword">if</span>(A == B) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">else</span> cha[B] = A;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>用于划分属性<br>构造O(n)  查询近似O(1)<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> cha[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cha[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findd</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cha[a] == a) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> findd(cha[a]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unite</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A = findd(a);</span><br><span class="line">    <span class="keyword">int</span> B = findd(b);</span><br><span class="line">    <span class="keyword">if</span>(A == B) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">else</span> cha[B] = A;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -475,8 +476,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -493,7 +503,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -545,6 +555,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hint"><span class="nav-number">1.</span> <span class="nav-text">hint</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
