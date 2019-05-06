@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weibolu.online/"/>
-  <updated>2019-04-24T04:11:07.884Z</updated>
+  <updated>2019-05-06T09:27:59.264Z</updated>
   <id>https://weibolu.online/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基础算法1 —— 快速幂及矩阵快速幂</title>
+    <link href="https://weibolu.online/2019/05/06/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%951%20%E2%80%94%E2%80%94%20%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%8A%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    <id>https://weibolu.online/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/</id>
+    <published>2019-05-06T00:31:03.000Z</published>
+    <updated>2019-05-06T09:27:59.264Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_pow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> base = a, ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans *= base;</span><br><span class="line">        base *= base;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="矩阵快速幂"><a href="#矩阵快速幂" class="headerlink" title="矩阵快速幂"></a>矩阵快速幂</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">matrix</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ll m[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line">    matrix()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(m, <span class="number">0</span>, <span class="keyword">sizeof</span> m);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">matrix <span class="keyword">operator</span> * (<span class="keyword">const</span> matrix &amp;a, <span class="keyword">const</span> matrix &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    matrix c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; j++) &#123;</span><br><span class="line">            c.m[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">9</span>; k++)</span><br><span class="line">                c.m[i][j] = (c.m[i][j]+a.m[i][k]*b.m[k][j])%mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">matrix <span class="title">quick_pow</span><span class="params">(matrix base, <span class="keyword">int</span> <span class="built_in">pow</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    matrix a;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) a.m[i][i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">pow</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">pow</span> &amp; <span class="number">1</span>) a = a*base;</span><br><span class="line">        base = base*base;</span><br><span class="line">        <span class="built_in">pow</span> &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;快速幂&quot;&gt;&lt;a href=&quot;#快速幂&quot; class=&quot;headerlink&quot; title=&quot;快速幂&quot;&gt;&lt;/a&gt;快速幂&lt;/h2&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+      
+    
+    </summary>
+    
+      <category term="ACM基础算法" scheme="https://weibolu.online/categories/ACM%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数论5 —— FFT</title>
+    <link href="https://weibolu.online/2019/05/05/%E6%95%B0%E8%AE%BA5%20%E2%80%94%E2%80%94%20FFT/"/>
+    <id>https://weibolu.online/2019/05/05/数论5 —— FFT/</id>
+    <published>2019-05-05T02:29:25.000Z</published>
+    <updated>2019-05-06T05:42:03.018Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p><a href="https://blog.csdn.net/linwanglian1/article/details/56020221" target="_blank" rel="noopener">傅里叶变换详解</a><br><a href="https://zhuanlan.zhihu.com/p/40505277" target="_blank" rel="noopener">FFT详细解析</a><br><a href="https://blog.csdn.net/lymingha0/article/details/46581277" target="_blank" rel="noopener">FFT类封装和三个例题</a></p><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>FFT即快速傅里叶变换<br>作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想</p><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>网上大部分模板都是kuangbin的</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> r, i;</span><br><span class="line">    Complex(<span class="keyword">double</span> _r = <span class="number">0</span>, <span class="keyword">double</span> _i = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        r = _r, i = _i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> + (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r+b.r, i+b.i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> - (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r-b.r, i-b.i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> * (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r*b.r-i*b.i, r*b.i+i*b.r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(Complex y[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, k;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>, j = len/<span class="number">2</span>; i &lt; len<span class="number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) swap(y[i], y[j]);</span><br><span class="line">        k = len/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(j &gt;= k) &#123;</span><br><span class="line">            j -= k;</span><br><span class="line">            k /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j &lt; k) j += k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fft</span><span class="params">(Complex y[], <span class="keyword">int</span> len, <span class="keyword">int</span> on)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    change(y, len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> h = <span class="number">2</span>; h &lt;= len; h &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="function">Complex <span class="title">wn</span><span class="params">(<span class="built_in">cos</span>(-on*<span class="number">2</span>*PI/h), <span class="built_in">sin</span>(-on*<span class="number">2</span>*PI/h))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j += h) &#123;</span><br><span class="line">            <span class="function">Complex <span class="title">w</span><span class="params">(<span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = j; k &lt; j+h/<span class="number">2</span>; k++) &#123;</span><br><span class="line">                Complex u = y[k];</span><br><span class="line">                Complex t = w*y[k+h/<span class="number">2</span>];</span><br><span class="line">                y[k] = u+t;</span><br><span class="line">                y[k+h/<span class="number">2</span>] = u-t;</span><br><span class="line">                w = w*wn;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(on == <span class="number">-1</span>) <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        y[i].r /= len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;详解&quot;&gt;&lt;a href=&quot;#详解&quot; class=&quot;headerlink&quot; title=&quot;详解&quot;&gt;&lt;/a&gt;详解&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/linwanglian1/article/details/56020221&quot; 
+      
+    
+    </summary>
+    
+      <category term="基础数论" scheme="https://weibolu.online/categories/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构4 —— RMQ</title>
@@ -254,9 +306,9 @@
       <category term="LIFE" scheme="https://weibolu.online/categories/LIFE/"/>
     
     
-      <category term="What is life?" scheme="https://weibolu.online/tags/What-is-life/"/>
-    
       <category term="codeforces" scheme="https://weibolu.online/tags/codeforces/"/>
+    
+      <category term="What is life?" scheme="https://weibolu.online/tags/What-is-life/"/>
     
   </entry>
   
@@ -313,11 +365,11 @@
   </entry>
   
   <entry>
-    <title>基础算法1 —— 快速排序模板</title>
-    <link href="https://weibolu.online/2019/04/02/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%951%20%E2%80%94%E2%80%94%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%A8%A1%E6%9D%BF/"/>
-    <id>https://weibolu.online/2019/04/02/基础算法1 —— 快速排序模板/</id>
+    <title>基础算法1 —— 快速排序</title>
+    <link href="https://weibolu.online/2019/04/02/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%951%20%E2%80%94%E2%80%94%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
+    <id>https://weibolu.online/2019/04/02/基础算法1 —— 快速排序/</id>
     <published>2019-04-02T15:31:03.000Z</published>
-    <updated>2019-04-24T02:53:07.273Z</updated>
+    <updated>2019-05-06T09:18:47.918Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[i];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &gt;= x) j--;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[i++] = s[j];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &lt;= x) i++;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(l, i);</span><br><span class="line">        quick_sort(i+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -491,60 +543,6 @@
     
     
       <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数论1 —— gcd算法详解</title>
-    <link href="https://weibolu.online/2019/03/11/%E6%95%B0%E8%AE%BA1%20%E2%80%94%E2%80%94%20gcd%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://weibolu.online/2019/03/11/数论1 —— gcd算法详解/</id>
-    <published>2019-03-11T09:17:01.000Z</published>
-    <updated>2019-04-15T08:31:30.039Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！</p><h2 id="欧几里德算法"><a href="#欧几里德算法" class="headerlink" title="欧几里德算法"></a>欧几里德算法</h2><p>这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a%b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a/gcd(a, b)*b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>至于gcd的原理就来源于两个等式：gcd(a, b) = gcd(b, a%b) 与 gcd(a, 0) = a, 后者不用多说，前者的证明如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">设 a = b*t1 + t2; (t1, t2均为整数)</span><br><span class="line">假设k是a和b的一个公约数，则a/k(记<span class="string">'/'</span>为整除), b/k;</span><br><span class="line">则必有 t2/k, 又有 t2 = a%b;</span><br><span class="line">故k也是a%b和b的一个公约数，那么它们的最大公约数也必然相同，即 gcd(a, b) = gcd(b, a%b);</span><br></pre></td></tr></table></figure><h2 id="拓展欧几里德算法"><a href="#拓展欧几里德算法" class="headerlink" title="拓展欧几里德算法"></a>拓展欧几里德算法</h2><p>这个算法内容如下：找到一对整数(x, y), 使得ax+by = gcd(a, b),紫书代码如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span>&amp; d, <span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!b) &#123;d = a; x = <span class="number">1</span>; y = <span class="number">0</span>;&#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        exgcd(b, a%b, d, y, x);</span><br><span class="line">        y -= x*(a/b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在网上找到了如下证明过程：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">可以这样思考: </span><br><span class="line">对于a’ = b, b’ = a % b 而言，我们求得 x, y使得 a’x + b’y = Gcd(a’, b’) </span><br><span class="line">由于b’ = a % b = a – a / b * b (注：这里的/是程序设计语言中的除法) </span><br><span class="line">那么可以得到: </span><br><span class="line">a’x + b’y = Gcd(a’, b’) ==&gt; </span><br><span class="line">bx + (a – a / b * b)y = Gcd(a’, b’) = Gcd(a, b) ==&gt; </span><br><span class="line">ay +b(x – a / b*y) = Gcd(a, b) </span><br><span class="line">因此对于a和b而言，他们的相对应的p，q分别是 y和(x-a/b*y)</span><br></pre></td></tr></table></figure><p>至此，我们可以得出结论：对于方程ax+by = c，当c满足条件c%gcd(a, b)时方程有整数解，反之则没有。这一定理又称为 <strong>“裴蜀定理”</strong>。</p><p><strong>同时，书上提到了利用exgcd求解二元一次方程的方法：对于方程ax+by = c, 若有一组解为(x0, y0), 那么它的任意一组解都可以写为(x0+kb’, y0-ka’), 其中a’ = a/gcd(a, b), b’ = b/gcd(a, b), k为任意常数。</strong></p><h2 id="快速欧几里德算法"><a href="#快速欧几里德算法" class="headerlink" title="快速欧几里德算法"></a>快速欧几里德算法</h2><p>在找资料的过程中，看到了这个算法，应该是用位运算代替了%运算，因此对2的指数型数据运算有优势，但看到几组测试，快速gcd都完败给了普通gcd，也暂时记下来吧。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (a == <span class="number">0</span>) <span class="keyword">return</span> b; </span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) <span class="keyword">return</span> a; </span><br><span class="line">    <span class="keyword">if</span> (!(a &amp; <span class="number">1</span>) &amp;&amp; !(b &amp; <span class="number">1</span>)) </span><br><span class="line">        <span class="keyword">return</span> kgcd(a&gt;&gt;<span class="number">1</span>, b&gt;&gt;<span class="number">1</span>)&lt;&lt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (!(b &amp; <span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> kgcd(a, b&gt;&gt;<span class="number">1</span>); </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (!(a &amp; <span class="number">1</span>)) <span class="keyword">return</span> kgcd(a&gt;&gt;<span class="number">1</span>, b); </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> kgcd(<span class="built_in">abs</span>(a - b), min(a, b)); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="小结-amp-练习"><a href="#小结-amp-练习" class="headerlink" title="小结&amp;练习"></a>小结&amp;练习</h2><p>至此关于gcd的说明都齐全了，接下来我们来找一道题目练习吧：<a href="http://nyoj.top/problem/144" target="_blank" rel="noopener">nyoj 144</a><br>题意很直白，秒选exgcd然后T了。。。发现这道题只需判读是否有解，exgcd有点浪费了，改用gcd，又T了。。。尝试几次后发现是cout &lt;&lt; “No” &lt;&lt; endl;的锅，换成printf就好了，并不懂为什么，代码如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a%b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> a, b, t, c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span>(n--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;t);</span><br><span class="line">        <span class="keyword">int</span> d = gcd(a, b);</span><br><span class="line">        <span class="keyword">if</span>(t % d != <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！&lt;/p&gt;
-&lt;h2 id=&quot;欧几里德算法&quot;&gt;&lt;a href
-      
-    
-    </summary>
-    
-      <category term="基础数论" scheme="https://weibolu.online/categories/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
-    
-    
-      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
-    
-      <category term="基础数论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LIFE2 —— 立个Flag</title>
-    <link href="https://weibolu.online/2018/12/26/LIFE2%20%E2%80%94%E2%80%94%20%E7%AB%8B%E4%B8%AAFlag/"/>
-    <id>https://weibolu.online/2018/12/26/LIFE2 —— 立个Flag/</id>
-    <published>2018-12-26T15:04:59.000Z</published>
-    <updated>2019-04-24T02:58:14.181Z</updated>
-    
-    <content type="html"><![CDATA[<p>鉴于自己太菜了以及好久没有好好打代码了，从明天起，寒假的codeforce和训练我一题都不会落下，统统补掉。（ps:坚持到第三场就去买个域名/xyx)</p><h1 id="好好学习-jpg"><a href="#好好学习-jpg" class="headerlink" title="好好学习.jpg"></a>好好学习.jpg</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;鉴于自己太菜了以及好久没有好好打代码了，从明天起，寒假的codeforce和训练我一题都不会落下，统统补掉。（ps:坚持到第三场就去买个域名/xyx)&lt;/p&gt;
-&lt;h1 id=&quot;好好学习-jpg&quot;&gt;&lt;a href=&quot;#好好学习-jpg&quot; class=&quot;headerlink&quot; 
-      
-    
-    </summary>
-    
-      <category term="LIFE" scheme="https://weibolu.online/categories/LIFE/"/>
-    
-    
-      <category term="What is life?" scheme="https://weibolu.online/tags/What-is-life/"/>
     
   </entry>
   

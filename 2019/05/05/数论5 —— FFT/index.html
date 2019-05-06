@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="前言数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！ 欧几里德算法这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。 123int gcd(int a, int b) &amp;#123;    return b == 0 ? a : gcd(b, a%b);&amp;#125; 同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：">
+<meta name="description" content="详解傅里叶变换详解FFT详细解析FFT类封装和三个例题 理解FFT即快速傅里叶变换作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想 模板网上大部分模板都是kuangbin的 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
 <meta name="keywords" content="ACM模板,基础数论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数论1 —— gcd算法详解">
-<meta property="og:url" content="https://weibolu.online/2019/03/11/数论1 —— gcd算法详解/index.html">
+<meta property="og:title" content="数论5 —— FFT">
+<meta property="og:url" content="https://weibolu.online/2019/05/05/数论5 —— FFT/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="前言数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！ 欧几里德算法这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。 123int gcd(int a, int b) &amp;#123;    return b == 0 ? a : gcd(b, a%b);&amp;#125; 同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：">
+<meta property="og:description" content="详解傅里叶变换详解FFT详细解析FFT类封装和三个例题 理解FFT即快速傅里叶变换作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想 模板网上大部分模板都是kuangbin的 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:31:30.039Z">
+<meta property="og:updated_time" content="2019-05-06T05:42:03.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数论1 —— gcd算法详解">
-<meta name="twitter:description" content="前言数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！ 欧几里德算法这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。 123int gcd(int a, int b) &amp;#123;    return b == 0 ? a : gcd(b, a%b);&amp;#125; 同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：">
+<meta name="twitter:title" content="数论5 —— FFT">
+<meta name="twitter:description" content="详解傅里叶变换详解FFT详细解析FFT类封装和三个例题 理解FFT即快速傅里叶变换作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想 模板网上大部分模板都是kuangbin的 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://weibolu.online/2019/03/11/数论1 —— gcd算法详解/">
+  <link rel="canonical" href="https://weibolu.online/2019/05/05/数论5 —— FFT/">
 
 
 
 
 
-  <title>数论1 —— gcd算法详解 | 微波炉 de Blogs</title>
+  <title>数论5 —— FFT | 微波炉 de Blogs</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/03/11/数论1 —— gcd算法详解/">
+    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/05/05/数论5 —— FFT/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wei Bolu">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数论1 —— gcd算法详解</h1>
+          <h1 class="post-title" itemprop="name headline">数论5 —— FFT</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T17:17:01+08:00">
-                2019-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T10:29:25+08:00">
+                2019-05-05
               </time>
             
 
@@ -344,7 +344,7 @@
 
           
           
-             <span id="/2019/03/11/数论1 —— gcd算法详解/" class="leancloud_visitors" data-flag-title="数论1 —— gcd算法详解">
+             <span id="/2019/05/05/数论5 —— FFT/" class="leancloud_visitors" data-flag-title="数论5 —— FFT">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,23 +375,10 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！</p>
-<h2 id="欧几里德算法"><a href="#欧几里德算法" class="headerlink" title="欧几里德算法"></a>欧几里德算法</h2><p>这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a%b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a/gcd(a, b)*b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>至于gcd的原理就来源于两个等式：gcd(a, b) = gcd(b, a%b) 与 gcd(a, 0) = a, 后者不用多说，前者的证明如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">设 a = b*t1 + t2; (t1, t2均为整数)</span><br><span class="line">假设k是a和b的一个公约数，则a/k(记<span class="string">'/'</span>为整除), b/k;</span><br><span class="line">则必有 t2/k, 又有 t2 = a%b;</span><br><span class="line">故k也是a%b和b的一个公约数，那么它们的最大公约数也必然相同，即 gcd(a, b) = gcd(b, a%b);</span><br></pre></td></tr></table></figure>
-<h2 id="拓展欧几里德算法"><a href="#拓展欧几里德算法" class="headerlink" title="拓展欧几里德算法"></a>拓展欧几里德算法</h2><p>这个算法内容如下：找到一对整数(x, y), 使得ax+by = gcd(a, b),紫书代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span>&amp; d, <span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!b) &#123;d = a; x = <span class="number">1</span>; y = <span class="number">0</span>;&#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        exgcd(b, a%b, d, y, x);</span><br><span class="line">        y -= x*(a/b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在网上找到了如下证明过程：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">可以这样思考: </span><br><span class="line">对于a’ = b, b’ = a % b 而言，我们求得 x, y使得 a’x + b’y = Gcd(a’, b’) </span><br><span class="line">由于b’ = a % b = a – a / b * b (注：这里的/是程序设计语言中的除法) </span><br><span class="line">那么可以得到: </span><br><span class="line">a’x + b’y = Gcd(a’, b’) ==&gt; </span><br><span class="line">bx + (a – a / b * b)y = Gcd(a’, b’) = Gcd(a, b) ==&gt; </span><br><span class="line">ay +b(x – a / b*y) = Gcd(a, b) </span><br><span class="line">因此对于a和b而言，他们的相对应的p，q分别是 y和(x-a/b*y)</span><br></pre></td></tr></table></figure>
-<p>至此，我们可以得出结论：对于方程ax+by = c，当c满足条件c%gcd(a, b)时方程有整数解，反之则没有。这一定理又称为 <strong>“裴蜀定理”</strong>。</p>
-<p><strong>同时，书上提到了利用exgcd求解二元一次方程的方法：对于方程ax+by = c, 若有一组解为(x0, y0), 那么它的任意一组解都可以写为(x0+kb’, y0-ka’), 其中a’ = a/gcd(a, b), b’ = b/gcd(a, b), k为任意常数。</strong></p>
-<h2 id="快速欧几里德算法"><a href="#快速欧几里德算法" class="headerlink" title="快速欧几里德算法"></a>快速欧几里德算法</h2><p>在找资料的过程中，看到了这个算法，应该是用位运算代替了%运算，因此对2的指数型数据运算有优势，但看到几组测试，快速gcd都完败给了普通gcd，也暂时记下来吧。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (a == <span class="number">0</span>) <span class="keyword">return</span> b; </span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) <span class="keyword">return</span> a; </span><br><span class="line">    <span class="keyword">if</span> (!(a &amp; <span class="number">1</span>) &amp;&amp; !(b &amp; <span class="number">1</span>)) </span><br><span class="line">        <span class="keyword">return</span> kgcd(a&gt;&gt;<span class="number">1</span>, b&gt;&gt;<span class="number">1</span>)&lt;&lt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (!(b &amp; <span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> kgcd(a, b&gt;&gt;<span class="number">1</span>); </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (!(a &amp; <span class="number">1</span>)) <span class="keyword">return</span> kgcd(a&gt;&gt;<span class="number">1</span>, b); </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> kgcd(<span class="built_in">abs</span>(a - b), min(a, b)); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="小结-amp-练习"><a href="#小结-amp-练习" class="headerlink" title="小结&amp;练习"></a>小结&amp;练习</h2><p>至此关于gcd的说明都齐全了，接下来我们来找一道题目练习吧：<a href="http://nyoj.top/problem/144" target="_blank" rel="noopener">nyoj 144</a><br>题意很直白，秒选exgcd然后T了。。。发现这道题只需判读是否有解，exgcd有点浪费了，改用gcd，又T了。。。尝试几次后发现是cout &lt;&lt; “No” &lt;&lt; endl;的锅，换成printf就好了，并不懂为什么，代码如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a%b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> a, b, t, c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span>(n--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;t);</span><br><span class="line">        <span class="keyword">int</span> d = gcd(a, b);</span><br><span class="line">        <span class="keyword">if</span>(t % d != <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p><a href="https://blog.csdn.net/linwanglian1/article/details/56020221" target="_blank" rel="noopener">傅里叶变换详解</a><br><a href="https://zhuanlan.zhihu.com/p/40505277" target="_blank" rel="noopener">FFT详细解析</a><br><a href="https://blog.csdn.net/lymingha0/article/details/46581277" target="_blank" rel="noopener">FFT类封装和三个例题</a></p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>FFT即快速傅里叶变换<br>作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>网上大部分模板都是kuangbin的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> r, i;</span><br><span class="line">    Complex(<span class="keyword">double</span> _r = <span class="number">0</span>, <span class="keyword">double</span> _i = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        r = _r, i = _i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> + (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r+b.r, i+b.i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> - (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r-b.r, i-b.i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> * (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r*b.r-i*b.i, r*b.i+i*b.r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(Complex y[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, k;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>, j = len/<span class="number">2</span>; i &lt; len<span class="number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) swap(y[i], y[j]);</span><br><span class="line">        k = len/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(j &gt;= k) &#123;</span><br><span class="line">            j -= k;</span><br><span class="line">            k /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j &lt; k) j += k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fft</span><span class="params">(Complex y[], <span class="keyword">int</span> len, <span class="keyword">int</span> on)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    change(y, len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> h = <span class="number">2</span>; h &lt;= len; h &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="function">Complex <span class="title">wn</span><span class="params">(<span class="built_in">cos</span>(-on*<span class="number">2</span>*PI/h), <span class="built_in">sin</span>(-on*<span class="number">2</span>*PI/h))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j += h) &#123;</span><br><span class="line">            <span class="function">Complex <span class="title">w</span><span class="params">(<span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = j; k &lt; j+h/<span class="number">2</span>; k++) &#123;</span><br><span class="line">                Complex u = y[k];</span><br><span class="line">                Complex t = w*y[k+h/<span class="number">2</span>];</span><br><span class="line">                y[k] = u+t;</span><br><span class="line">                y[k+h/<span class="number">2</span>] = u-t;</span><br><span class="line">                w = w*wn;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(on == <span class="number">-1</span>) <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        y[i].r /= len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -423,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/26/LIFE2 —— 立个Flag/" rel="next" title="LIFE2 —— 立个Flag">
-                <i class="fa fa-chevron-left"></i> LIFE2 —— 立个Flag
+              <a href="/2019/04/24/数据结构4 —— RMQ/" rel="next" title="数据结构4 —— RMQ">
+                <i class="fa fa-chevron-left"></i> 数据结构4 —— RMQ
               </a>
             
           </div>
@@ -433,8 +420,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/11/数论2 —— Eratosthenes-筛法/" rel="prev" title="数论2 —— 筛法 & 取模小技巧">
-                数论2 —— 筛法 & 取模小技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/" rel="prev" title="基础算法1 —— 快速幂及矩阵快速幂">
+                基础算法1 —— 快速幂及矩阵快速幂 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -465,7 +452,7 @@
           
 
   
-    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/03/11/数论1 —— gcd算法详解/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/03/11/数论1 —— gcd算法详解/&title=数论1 —— gcd算法详解" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
+    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/05/05/数论5 —— FFT/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/05/05/数论5 —— FFT/&title=数论5 —— FFT" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
 
 
   
@@ -580,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧几里德算法"><span class="nav-number">2.</span> <span class="nav-text">欧几里德算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展欧几里德算法"><span class="nav-number">3.</span> <span class="nav-text">拓展欧几里德算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速欧几里德算法"><span class="nav-number">4.</span> <span class="nav-text">快速欧几里德算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-amp-练习"><span class="nav-number">5.</span> <span class="nav-text">小结&amp;练习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#详解"><span class="nav-number">1.</span> <span class="nav-text">详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解"><span class="nav-number">2.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">3.</span> <span class="nav-text">模板</span></a></li></ol></div>
             
 
           </div>

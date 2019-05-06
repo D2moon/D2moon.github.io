@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[i]">
+<meta name="description" content="快速幂12345678910int quick_pow(int a, int b)&amp;#123;    int base = a, ans = 1;    while(b) &amp;#123;        if(b &amp;amp; 1) ans *= base;        base *= base;        b &amp;gt;&amp;gt;= 1;    &amp;#125;    return ans;&amp;#125;">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基础算法1 —— 快速排序模板">
-<meta property="og:url" content="https://weibolu.online/2019/04/02/基础算法1 —— 快速排序模板/index.html">
+<meta property="og:title" content="基础算法1 —— 快速幂及矩阵快速幂">
+<meta property="og:url" content="https://weibolu.online/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[i]">
+<meta property="og:description" content="快速幂12345678910int quick_pow(int a, int b)&amp;#123;    int base = a, ans = 1;    while(b) &amp;#123;        if(b &amp;amp; 1) ans *= base;        base *= base;        b &amp;gt;&amp;gt;= 1;    &amp;#125;    return ans;&amp;#125;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T02:53:07.273Z">
+<meta property="og:updated_time" content="2019-05-06T09:27:59.264Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基础算法1 —— 快速排序模板">
-<meta name="twitter:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[i]">
+<meta name="twitter:title" content="基础算法1 —— 快速幂及矩阵快速幂">
+<meta name="twitter:description" content="快速幂12345678910int quick_pow(int a, int b)&amp;#123;    int base = a, ans = 1;    while(b) &amp;#123;        if(b &amp;amp; 1) ans *= base;        base *= base;        b &amp;gt;&amp;gt;= 1;    &amp;#125;    return ans;&amp;#125;">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://weibolu.online/2019/04/02/基础算法1 —— 快速排序模板/">
+  <link rel="canonical" href="https://weibolu.online/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/">
 
 
 
 
 
-  <title>基础算法1 —— 快速排序模板 | 微波炉 de Blogs</title>
+  <title>基础算法1 —— 快速幂及矩阵快速幂 | 微波炉 de Blogs</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/04/02/基础算法1 —— 快速排序模板/">
+    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wei Bolu">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基础算法1 —— 快速排序模板</h1>
+          <h1 class="post-title" itemprop="name headline">基础算法1 —— 快速幂及矩阵快速幂</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T23:31:03+08:00">
-                2019-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T08:31:03+08:00">
+                2019-05-06
               </time>
             
 
@@ -344,7 +344,7 @@
 
           
           
-             <span id="/2019/04/02/基础算法1 —— 快速排序模板/" class="leancloud_visitors" data-flag-title="基础算法1 —— 快速排序模板">
+             <span id="/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/" class="leancloud_visitors" data-flag-title="基础算法1 —— 快速幂及矩阵快速幂">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,7 +375,8 @@
       
 
       
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[i];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &gt;= x) j--;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[i++] = s[j];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &lt;= x) i++;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(l, i);</span><br><span class="line">        quick_sort(i+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_pow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> base = a, ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans *= base;</span><br><span class="line">        base *= base;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="矩阵快速幂"><a href="#矩阵快速幂" class="headerlink" title="矩阵快速幂"></a>矩阵快速幂</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">matrix</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ll m[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line">    matrix()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(m, <span class="number">0</span>, <span class="keyword">sizeof</span> m);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">matrix <span class="keyword">operator</span> * (<span class="keyword">const</span> matrix &amp;a, <span class="keyword">const</span> matrix &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    matrix c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; j++) &#123;</span><br><span class="line">            c.m[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">9</span>; k++)</span><br><span class="line">                c.m[i][j] = (c.m[i][j]+a.m[i][k]*b.m[k][j])%mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">matrix <span class="title">quick_pow</span><span class="params">(matrix base, <span class="keyword">int</span> <span class="built_in">pow</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    matrix a;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) a.m[i][i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">pow</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">pow</span> &amp; <span class="number">1</span>) a = a*base;</span><br><span class="line">        base = base*base;</span><br><span class="line">        <span class="built_in">pow</span> &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -405,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/26/博弈论1 —— 基础博弈/" rel="next" title="博弈论1 —— 基础博弈">
-                <i class="fa fa-chevron-left"></i> 博弈论1 —— 基础博弈
+              <a href="/2019/05/05/数论5 —— FFT/" rel="next" title="数论5 —— FFT">
+                <i class="fa fa-chevron-left"></i> 数论5 —— FFT
               </a>
             
           </div>
@@ -414,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/02/ACM技巧2 —— 快速输入输出流/" rel="prev" title="ACM技巧2 —— 快速输入输出流">
-                ACM技巧2 —— 快速输入输出流 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -447,7 +444,7 @@
           
 
   
-    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/04/02/基础算法1 —— 快速排序模板/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/04/02/基础算法1 —— 快速排序模板/&title=基础算法1 —— 快速排序模板" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
+    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/05/06/基础算法1 —— 快速幂及矩阵快速幂/&title=基础算法1 —— 快速幂及矩阵快速幂" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
 
 
   
@@ -473,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -491,7 +497,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -543,6 +549,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速幂"><span class="nav-number">1.</span> <span class="nav-text">快速幂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵快速幂"><span class="nav-number">2.</span> <span class="nav-text">矩阵快速幂</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
