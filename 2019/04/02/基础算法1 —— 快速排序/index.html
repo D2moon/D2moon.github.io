@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[i]">
+<meta name="description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[j]">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础算法1 —— 快速排序">
 <meta property="og:url" content="https://weibolu.online/2019/04/02/基础算法1 —— 快速排序/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[i]">
+<meta property="og:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[j]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-06T09:18:47.918Z">
+<meta property="og:updated_time" content="2019-07-10T05:39:03.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础算法1 —— 快速排序">
-<meta name="twitter:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[i]">
+<meta name="twitter:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[j]">
 
 
 
@@ -375,7 +375,7 @@
       
 
       
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[i];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &gt;= x) j--;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[i++] = s[j];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &lt;= x) i++;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(l, i);</span><br><span class="line">        quick_sort(i+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[i];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &gt;= x) j--;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[i++] = s[j];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &lt;= x) i++;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(l, i);</span><br><span class="line">        quick_sort(i+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -491,7 +491,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -502,7 +502,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -513,7 +513,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
