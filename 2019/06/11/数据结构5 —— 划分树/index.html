@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="ACM模板,基础数论,">
+  <meta name="keywords" content="ACM模板,数据结构,">
 
 
 
@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="前言刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：123x ≡ 2 (mod 3);x ≡ 4 (mod 5);x ≡ 3 (mod 7); 而中国剩余定理就是来求解这种同余方程组的，又称CRT（Chinese Remainder Th">
-<meta name="keywords" content="ACM模板,基础数论">
+<meta name="description" content="hint用途：用于求区间内第k大值缺点：不能进行更新操作 划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。　　划分树的基本">
+<meta name="keywords" content="ACM模板,数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数论3 —— 中国剩余定理">
-<meta property="og:url" content="https://weibolu.online/2019/03/14/数论3 —— 中国剩余定理/index.html">
+<meta property="og:title" content="数据结构5 —— 划分树">
+<meta property="og:url" content="https://weibolu.online/2019/06/11/数据结构5 —— 划分树/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="前言刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：123x ≡ 2 (mod 3);x ≡ 4 (mod 5);x ≡ 3 (mod 7); 而中国剩余定理就是来求解这种同余方程组的，又称CRT（Chinese Remainder Th">
+<meta property="og:description" content="hint用途：用于求区间内第k大值缺点：不能进行更新操作 划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。　　划分树的基本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:31:37.575Z">
+<meta property="og:updated_time" content="2019-07-14T16:26:45.272Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数论3 —— 中国剩余定理">
-<meta name="twitter:description" content="前言刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：123x ≡ 2 (mod 3);x ≡ 4 (mod 5);x ≡ 3 (mod 7); 而中国剩余定理就是来求解这种同余方程组的，又称CRT（Chinese Remainder Th">
+<meta name="twitter:title" content="数据结构5 —— 划分树">
+<meta name="twitter:description" content="hint用途：用于求区间内第k大值缺点：不能进行更新操作 划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。　　划分树的基本">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://weibolu.online/2019/03/14/数论3 —— 中国剩余定理/">
+  <link rel="canonical" href="https://weibolu.online/2019/06/11/数据结构5 —— 划分树/">
 
 
 
 
 
-  <title>数论3 —— 中国剩余定理 | 微波炉 de Blogs</title>
+  <title>数据结构5 —— 划分树 | 微波炉 de Blogs</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/03/14/数论3 —— 中国剩余定理/">
+    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/06/11/数据结构5 —— 划分树/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wei Bolu">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数论3 —— 中国剩余定理</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构5 —— 划分树</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T10:25:43+08:00">
-                2019-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-11T11:46:28+08:00">
+                2019-06-11
               </time>
             
 
@@ -327,8 +327,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础数论/" itemprop="url" rel="index">
-                    <span itemprop="name">基础数论</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -344,7 +344,7 @@
 
           
           
-             <span id="/2019/03/14/数论3 —— 中国剩余定理/" class="leancloud_visitors" data-flag-title="数论3 —— 中国剩余定理">
+             <span id="/2019/06/11/数据结构5 —— 划分树/" class="leancloud_visitors" data-flag-title="数据结构5 —— 划分树">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,19 +375,9 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？<br>虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x ≡ <span class="number">2</span> (mod <span class="number">3</span>);</span><br><span class="line">x ≡ <span class="number">4</span> (mod <span class="number">5</span>);</span><br><span class="line">x ≡ <span class="number">3</span> (mod <span class="number">7</span>);</span><br></pre></td></tr></table></figure></p>
-<p>而<strong>中国剩余定理</strong>就是来求解这种同余方程组<br>的，又称CRT（Chinese Remainder Theorem）。</p>
-<p>在此之前我们要先回顾下之前的拓展欧几里德算法：<a href="https://weibolu.online/2019/03/11/gcd%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/">gcd 与 exgcd</a></p>
-<h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><h3 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h3><p>首先考虑最简单的一种情况：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x ≡ a1 (mod p1);</span><br><span class="line">x ≡ a2 (mod p2);</span><br><span class="line">gcd(p1, p2) = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
-<p>首先将上式变形为： x = a1 + k1p1  &amp;&amp; x = a2 + k2p2;<br>消去x得： a1 + k1p1 = a2 + k2p2;<br>整理得： p1k2 - p2k2 = a2 - a1;<br>这不就是一个普通的二元一次方程了嘛，又有gac(p1, p2) = 1，根据我们之前学到的内容，用exgcd算法可以很容易得到一组特解 (k1’, k2’)，从而得到它的通解为：<br>k1 = p2t + k1’,     k2 = p1t + k2’;    (t为任意整数)<br>同时对于(k1’, k2’)我们也能得到一个特解 x0。<br>我们将k1代入到 x = a1 + k1p1中去，可以得到：<br>x = a1 + k1’p1 + p1p2t，即x = x0 + p1p2t;<br>它其实就等价于 x ≡ x0 (mod p1p2), 这样我们就将原方程合并为了新的方程，那么如果有n个同余方程，且模数两两互质，我们就可以将其合并为：<br>x ≡ x0 (mod p1p2……pn)，x0同样是一个特解。<br>我们也能看出上述方程在区间[0, p1p2……pn)上<strong>有且仅有</strong>一个解。</p>
-<h4 id="最终表述"><a href="#最终表述" class="headerlink" title="最终表述"></a>最终表述</h4><p>设正整数p1, p2, ……, pn两两互素，则同余方程组：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x ≡ a1 (mod p1);</span><br><span class="line">x ≡ a2 (mod p2);</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">x ≡ an (mod pn);</span><br></pre></td></tr></table></figure></p>
-<p>有整数解，且在模 M = p1p2p3……pn下解是唯一的，解为：<br>x ≡ (a1M1T1 + a2M2T2 + …… + anMnTn) mod M;<br>其中Mi = M / pi, Ti 为 Mi mod pi 的逆元。</p>
-<h4 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a>模板代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!b) &#123;x = <span class="number">1</span>; y = <span class="number">0</span>;&#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        exgcd(b, a%b, y, x);</span><br><span class="line">        y -= x * (a/b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">CRT</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> m[],<span class="keyword">int</span> n)</span></span>&#123;      <span class="comment">//x ≡ a[i] (mod m[i])</span></span><br><span class="line">  <span class="keyword">int</span> M = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">    M *= m[i];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">    <span class="keyword">int</span> Mi = M / m[i];</span><br><span class="line">    exgcd(Mi, m[i], x, y);           <span class="comment">//Mi模mi的逆元</span></span><br><span class="line">    ans = (ans + Mi * x * a[i]) % M;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(ans &lt; <span class="number">0</span>) ans += M;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="拓展形式"><a href="#拓展形式" class="headerlink" title="拓展形式"></a>拓展形式</h3><p>上述情况是在模数p1, p2, ……, pn两两互素的基础上推导出的，如果去掉这一条件呢？<br>同样先考虑最简单的一种情况：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x ≡ a1 (mod p1);</span><br><span class="line">x ≡ a2 (mod p2);</span><br></pre></td></tr></table></figure></p>
-<p>和之前一样的操作，我们可以得到这个方程：a1 + k1p1 = a2 + k2p2;<br>但此时方程不一定有整数解，根据裴蜀定理，如果 gcd(p1, p2) % (a2 - a1) = 0, 则有整数解。我们先假设它满足这个条件，并且已经求出一组特解(k1’, k2’)。<br>设g = gcd(p1, p2)，则上述方程可化为：k1(p1/g) - k2(p2/g) = (a2 - a1)/g<br>这样p1/g  与  p2/g互素，就可以按照之前的处理方式解决了，得到通解为:<br>k1 = (p2/g)t + k1’           k2 = (p1/g)t + k2’<br>再次回代后可得:  x = x0 + lcm(p1, p2) * t;<br>等价于方程:  x ≡ x0 (mod lcm(p1, p2));</p>
-<h4 id="最终表述-1"><a href="#最终表述-1" class="headerlink" title="最终表述"></a>最终表述</h4><p>有n个同余方程，我们就可以将其合并为：<br>x ≡ x0 (mod lcm(p1, p2, ……, pn))，x0同样是一个特解。</p>
-<h4 id="模板代码-1"><a href="#模板代码-1" class="headerlink" title="模板代码"></a>模板代码</h4><p>其实仔细想想和CRT没什么大的区别，稍微改下就好了呀，那么模板。。。咕咕咕<br>友情链接（我觉得讲的非常好）：<br><a href="http://blog.miskcoo.com/2014/09/chinese-remainder-theorem" target="_blank" rel="noopener">中国剩余定理</a><br><a href="https://blog.csdn.net/guhaiteng/article/details/52792251" target="_blank" rel="noopener">模板题目解析</a><br>之后在在下面补一个ex_CRT的题目吧，to be continue……</p>
-
+        <h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>用途：用于求区间内第k大值<br>缺点：不能进行更新操作</p>
+<p>划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。<br>　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。<br>　　划分树的基本思想就是对于某个区间，把它划分成两个子区间，左边区间的数小于右边区间的数。查找的时候通过记录进入左子树的数的个数，确定下一个查找区间，最后范围缩小到1，就找到了。<br>　　划分树定义为，它的每一个节点保存区间[lft,rht]所有元素，元素顺序与原数组（输入）相同，但是，两个子树的元素为该节点所有元素排序后(rht-lft+1)/2个进入左子树，其余的到右子树，同时维护一个num域，num[i]表示lft-&gt;i这个点有多少个进入了左子树。</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> tree[<span class="number">30</span>][MAXN];<span class="comment">//表示每层每个位置的值</span></span><br><span class="line"><span class="keyword">int</span> sorted[MAXN];<span class="comment">//已经排序的数</span></span><br><span class="line"><span class="keyword">int</span> toleft[<span class="number">30</span>][MAXN];<span class="comment">//toleft[p][i]表示第i层从1到i有多少个数分入左边</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> le,<span class="keyword">int</span> r,<span class="keyword">int</span> dep)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(le==r)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=(le+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> same=mid-le+<span class="number">1</span>;<span class="comment">//表示等于中间值而且被分入左边的个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=le;i&lt;=r;i++)</span><br><span class="line">      <span class="keyword">if</span>(tree[dep][i]&lt;sorted[mid])</span><br><span class="line">         same--;</span><br><span class="line">    <span class="keyword">int</span> lpos=le;</span><br><span class="line">    <span class="keyword">int</span> rpos=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=le;i&lt;=r;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(tree[dep][i]&lt;sorted[mid])<span class="comment">//比中间的数小，分入左边</span></span><br><span class="line">             tree[dep+<span class="number">1</span>][lpos++]=tree[dep][i];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(tree[dep][i]==sorted[mid]&amp;&amp;same&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            tree[dep+<span class="number">1</span>][lpos++]=tree[dep][i];</span><br><span class="line">            same--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>  <span class="comment">//比中间值大分入右边</span></span><br><span class="line">            tree[dep+<span class="number">1</span>][rpos++]=tree[dep][i];</span><br><span class="line">        toleft[dep][i]=toleft[dep][le<span class="number">-1</span>]+lpos-le;<span class="comment">//从1到i放左边的个数</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    build(le,mid,dep+<span class="number">1</span>);</span><br><span class="line">    build(mid+<span class="number">1</span>,r,dep+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//查询区间第k大的数，[L,R]是大区间，[le,r]是要查询的小区间</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> L,<span class="keyword">int</span> R,<span class="keyword">int</span> le,<span class="keyword">int</span> r,<span class="keyword">int</span> dep,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(le==r)<span class="keyword">return</span> tree[dep][le];</span><br><span class="line">    <span class="keyword">int</span> mid=(L+R)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> cnt=toleft[dep][r]-toleft[dep][le<span class="number">-1</span>];  <span class="comment">//[le,r]中位于左边的个数</span></span><br><span class="line">    <span class="keyword">if</span>(cnt&gt;=k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//L+要查询的区间前被放在左边的个数</span></span><br><span class="line">        <span class="keyword">int</span> newl=L+toleft[dep][le<span class="number">-1</span>]-toleft[dep][L<span class="number">-1</span>];</span><br><span class="line">        <span class="comment">//左端点加上查询区间会被放在左边的个数</span></span><br><span class="line">        <span class="keyword">int</span> newr=newl+cnt<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> query(L,mid,newl,newr,dep+<span class="number">1</span>,k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">         <span class="keyword">int</span> newr=r+toleft[dep][R]-toleft[dep][r];</span><br><span class="line">         <span class="keyword">int</span> newl=newr-(r-le-cnt);</span><br><span class="line">         <span class="keyword">return</span> query(mid+<span class="number">1</span>,R,newl,newr,dep+<span class="number">1</span>,k-cnt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;<span class="built_in">cin</span> &gt;&gt; tree[<span class="number">0</span>][i]; sorted[i] = tree[<span class="number">0</span>][i];&#125;</span><br><span class="line">        sort(sorted+<span class="number">1</span>, sorted+n+<span class="number">1</span>);</span><br><span class="line">        build(<span class="number">1</span>, n, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> le, r, k;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; le &gt;&gt; r &gt;&gt; k;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; query(<span class="number">1</span>, n, le, r, <span class="number">0</span>, k) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -406,7 +396,7 @@
           
             <a href="/tags/ACM模板/" rel="tag"># ACM模板</a>
           
-            <a href="/tags/基础数论/" rel="tag"># 基础数论</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -419,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/12/Codeforces-Round-546-Div-2-题解/" rel="next" title="Codeforces Round #546 (Div. 2) 题解">
-                <i class="fa fa-chevron-left"></i> Codeforces Round #546 (Div. 2) 题解
+              <a href="/2019/06/10/ACM技巧3 —— _int128的使用/" rel="next" title="ACM技巧3 —— _int128的使用">
+                <i class="fa fa-chevron-left"></i> ACM技巧3 —— _int128的使用
               </a>
             
           </div>
@@ -429,8 +419,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/14/数论4 —— 欧拉函数/" rel="prev" title="数论4 —— 欧拉函数">
-                数论4 —— 欧拉函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/13/dp3 —— LIS与LCS问题/" rel="prev" title="dp3 —— LIS与LCS问题">
+                dp3 —— LIS与LCS问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -461,7 +451,7 @@
           
 
   
-    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/03/14/数论3 —— 中国剩余定理/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/03/14/数论3 —— 中国剩余定理/&title=数论3 —— 中国剩余定理" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
+    <iframe title="livere" src="https://was.livere.me/comment/city?id=city&refer=https://weibolu.online/2019/06/11/数据结构5 —— 划分树/&uid=MTAyMC80MzExNS8xOTY2MQ==&site=https://weibolu.online/2019/06/11/数据结构5 —— 划分树/&title=数据结构5 —— 划分树" scrolling="" frameborder="0" id="lv-comment-399" style="min-width: 100%; width: 100px; min-height: 400px; overflow: auto; border: 0px; z-index: 124212; height: 800px;"></iframe>
 
 
   
@@ -576,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中国剩余定理"><span class="nav-number">2.</span> <span class="nav-text">中国剩余定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本形式"><span class="nav-number">2.1.</span> <span class="nav-text">基本形式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最终表述"><span class="nav-number">2.1.1.</span> <span class="nav-text">最终表述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板代码"><span class="nav-number">2.1.2.</span> <span class="nav-text">模板代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展形式"><span class="nav-number">2.2.</span> <span class="nav-text">拓展形式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最终表述-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">最终表述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板代码-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">模板代码</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hint"><span class="nav-number">1.</span> <span class="nav-text">hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">2.</span> <span class="nav-text">模板</span></a></li></ol></div>
             
 
           </div>
