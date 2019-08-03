@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="_int128是128位2进制数据，一般oj上有该数据类型，但要自己写输出函数1234567void print(__int128 x)&amp;#123;    if(!x) return ;    if(x &amp;lt; 0) putchar(&apos;-&apos;), x = -x;    print(x / 10);    putchar(x%10+&apos;0&apos;);&amp;#125;">
+<meta name="description" content="__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数123456789101112131415161718192021//输入void scan(__int128 &amp;amp;x)//输入&amp;#123;    x = 0;    int f = 1;    char ch;    if((ch = getchar()) == &apos;-&apos;) f = -f;    else x">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACM技巧3 —— _int128的使用">
 <meta property="og:url" content="https://weibolu.online/2019/06/10/ACM技巧3 —— _int128的使用/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="_int128是128位2进制数据，一般oj上有该数据类型，但要自己写输出函数1234567void print(__int128 x)&amp;#123;    if(!x) return ;    if(x &amp;lt; 0) putchar(&apos;-&apos;), x = -x;    print(x / 10);    putchar(x%10+&apos;0&apos;);&amp;#125;">
+<meta property="og:description" content="__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数123456789101112131415161718192021//输入void scan(__int128 &amp;amp;x)//输入&amp;#123;    x = 0;    int f = 1;    char ch;    if((ch = getchar()) == &apos;-&apos;) f = -f;    else x">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-10T15:22:33.204Z">
+<meta property="og:updated_time" content="2019-07-29T11:14:49.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ACM技巧3 —— _int128的使用">
-<meta name="twitter:description" content="_int128是128位2进制数据，一般oj上有该数据类型，但要自己写输出函数1234567void print(__int128 x)&amp;#123;    if(!x) return ;    if(x &amp;lt; 0) putchar(&apos;-&apos;), x = -x;    print(x / 10);    putchar(x%10+&apos;0&apos;);&amp;#125;">
+<meta name="twitter:description" content="__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数123456789101112131415161718192021//输入void scan(__int128 &amp;amp;x)//输入&amp;#123;    x = 0;    int f = 1;    char ch;    if((ch = getchar()) == &apos;-&apos;) f = -f;    else x">
 
 
 
@@ -375,7 +375,7 @@
       
 
       
-        <p>_int128是128位2进制数据，一般oj上有该数据类型，但要自己写输出函数<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(__int128 x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>), x = -x;</span><br><span class="line">    print(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span><span class="params">(__int128 &amp;x)</span><span class="comment">//输入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    <span class="keyword">if</span>((ch = getchar()) == <span class="string">'-'</span>) f = -f;</span><br><span class="line">    <span class="keyword">else</span> x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">while</span>((ch = getchar()) &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">        x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    x *= f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(__int128 x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>), x = -x;</span><br><span class="line">    print(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -492,7 +492,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
