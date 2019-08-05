@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weibolu.online/"/>
-  <updated>2019-08-04T17:32:03.561Z</updated>
+  <updated>2019-08-05T11:24:29.053Z</updated>
   <id>https://weibolu.online/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://weibolu.online/2019/08/04/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%953%20%E2%80%94%E2%80%94%20%E6%97%A5%E6%9C%9F%E6%8E%A8%E6%B5%8B%E6%98%9F%E6%9C%9F%E6%95%B0/"/>
     <id>https://weibolu.online/2019/08/04/基础算法3 —— 日期推测星期数/</id>
     <published>2019-08-04T00:31:03.000Z</published>
-    <updated>2019-08-04T17:32:03.561Z</updated>
+    <updated>2019-08-05T11:24:29.053Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="蔡勒公式"><a href="#蔡勒公式" class="headerlink" title="蔡勒公式"></a>蔡勒公式</h2><p>一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几</p><p>给定日期为yy-mm-dd<br>其中月份若为1月或2月，要记作上一年的13月和14月。</p><p>则其对应星期数为：</p><p>int c = yy/100;<br>int d = yy%100;<br>week = (c/4) - 2<em>c + (d+d/4) + (13 </em> (mm+1)/5) + dd - 1;<br>if(week &lt; 0) week = (week + (-week/7+1) * 7)%7;<br>else week %= 7;</p><p>注意week可能为负值，这样最终得到的week为0就为周日，为1就为周一，依此类推。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="蔡勒公式"><a href="#蔡勒公式" class="headerlink" title="蔡勒公式"></a>蔡勒公式</h2><p>一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几</p><p>给定日期为yy-mm-dd<br>其中月份若为1月或2月，要记作上一年的13月和14月。</p><p>则其对应星期数为：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">int</span> c = yy/<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> d = yy%<span class="number">100</span>;</span><br><span class="line">week = (c/<span class="number">4</span>) - <span class="number">2</span> * c + (d+d/<span class="number">4</span>) + (<span class="number">13</span> * (mm+<span class="number">1</span>)/<span class="number">5</span>) + dd - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(week &lt; <span class="number">0</span>) week = (week + (-week/<span class="number">7</span>+<span class="number">1</span>) * <span class="number">7</span>)%<span class="number">7</span>;</span><br><span class="line"><span class="keyword">else</span> week %= <span class="number">7</span>;</span><br></pre></td></tr></table></figure><p>注意week可能为负值，这样最终得到的week为0就为周日，为1就为周一，依此类推。</p>]]></content>
     
     <summary type="html">
     

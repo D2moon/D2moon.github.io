@@ -381,8 +381,8 @@
           蔡勒公式一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几
 给定日期为yy-mm-dd其中月份若为1月或2月，要记作上一年的13月和14月。
 则其对应星期数为：
-int c = yy/100;int d = yy%100;week = (c/4) - 2c + (d+d/4) + (13  (mm+1)/5) + dd - 1;if(week &lt; 0) week = (week + (-week/7+1) * 7)%7;else week %= 7;
-注意week可能为负值，这样最终
+123456int c = yy/100;int d = yy%100;week = (c/4) - 2 * c + (d+d/4) + (13 * (mm+1)/5) + dd - 1;if(week &lt; 0) week = (week + (-week/7+1) * 7)%7;else week %= 7;
+注意week
           ...
           <!--noindex-->
           <div class="post-button text-center">
