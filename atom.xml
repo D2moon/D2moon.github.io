@@ -43,26 +43,6 @@
   </entry>
   
   <entry>
-    <title>图论3 —— 最大流问题</title>
-    <link href="https://weibolu.online/2019/07/23/%E5%9B%BE%E8%AE%BA3%20%E2%80%94%E2%80%94%20%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/"/>
-    <id>https://weibolu.online/2019/07/23/图论3 —— 最大流问题/</id>
-    <published>2019-07-23T06:12:25.000Z</published>
-    <updated>2019-07-28T02:09:57.985Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="基础图论" scheme="https://weibolu.online/categories/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
-    
-    
-      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
-    
-      <category term="基础图论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
     <title>图论2 —— 最短路问题</title>
     <link href="https://weibolu.online/2019/07/23/%E5%9B%BE%E8%AE%BA2%20%E2%80%94%E2%80%94%20%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/"/>
     <id>https://weibolu.online/2019/07/23/图论2 —— 最短路问题/</id>
@@ -78,6 +58,26 @@
         &lt;h2 id=&quot;hint&quot;&gt;&lt;a href=&quot;#hint&quot; class=&quot;headerlink&quot; title=&quot;hint&quot;&gt;&lt;/a&gt;hint&lt;/h2&gt;&lt;p&gt;在此记录图论中最短路问题的几种解法&lt;br&gt;ps: 本篇博客仅记录算法思想，模板并不能直接用。&lt;/p&gt;
 &lt;h2 id=&quot;Dij
       
+    
+    </summary>
+    
+      <category term="基础图论" scheme="https://weibolu.online/categories/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="基础图论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图论3 —— 最大流问题</title>
+    <link href="https://weibolu.online/2019/07/23/%E5%9B%BE%E8%AE%BA3%20%E2%80%94%E2%80%94%20%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/"/>
+    <id>https://weibolu.online/2019/07/23/图论3 —— 最大流问题/</id>
+    <published>2019-07-23T06:12:25.000Z</published>
+    <updated>2019-07-28T02:09:57.985Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
@@ -139,6 +139,32 @@
     
     
       <category term="DP" scheme="https://weibolu.online/tags/DP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gcd 是什么</title>
+    <link href="https://weibolu.online/2019/07/17/gcd%20%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://weibolu.online/2019/07/17/gcd 是什么/</id>
+    <published>2019-07-17T14:44:07.000Z</published>
+    <updated>2019-08-05T11:40:48.800Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="gcd是什么"><a href="#gcd是什么" class="headerlink" title="gcd是什么"></a>gcd是什么</h2><p>gcd是什么<br>gcd是什么<br>gcd是什么<br>gcd是什么</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;gcd是什么&quot;&gt;&lt;a href=&quot;#gcd是什么&quot; class=&quot;headerlink&quot; title=&quot;gcd是什么&quot;&gt;&lt;/a&gt;gcd是什么&lt;/h2&gt;&lt;p&gt;gcd是什么&lt;br&gt;gcd是什么&lt;br&gt;gcd是什么&lt;br&gt;gcd是什么&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="gcd是什么" scheme="https://weibolu.online/categories/gcd%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+    
+      <category term="gcd是什么" scheme="https://weibolu.online/tags/gcd%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     
   </entry>
   
@@ -485,33 +511,6 @@
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="字符串处理" scheme="https://weibolu.online/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构3 —— 并查集</title>
-    <link href="https://weibolu.online/2019/04/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%843%20%E2%80%94%E2%80%94%20%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    <id>https://weibolu.online/2019/04/18/数据结构3 —— 并查集/</id>
-    <published>2019-04-18T15:46:28.000Z</published>
-    <updated>2019-05-15T12:42:06.864Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>用于划分属性<br>构造O(n)  查询近似O(1)<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> cha[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cha[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findd</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cha[a] == a) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> findd(cha[a]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unite</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A = findd(a);</span><br><span class="line">    <span class="keyword">int</span> B = findd(b);</span><br><span class="line">    <span class="keyword">if</span>(A == B) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">else</span> cha[B] = A;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//优化</span></span><br><span class="line"><span class="comment">//迭代查找函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getf</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = v, t;</span><br><span class="line">    <span class="keyword">while</span>(f[p] != p) p = f[p];</span><br><span class="line">    <span class="keyword">int</span> x = v;</span><br><span class="line">    <span class="keyword">while</span>(x != p) &#123;t = f[x]; f[x] = p; x = t;&#125;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按秩合并  数据较多时合并优化为log(n),额外花费空间O(n)</span></span><br><span class="line"><span class="keyword">int</span> rnk[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t1 = getf(x), t2 = getf(y);</span><br><span class="line">    <span class="keyword">if</span>(t1 == t2) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(rnk[t1] &gt; rnk[t2]) cha[t2] = t1;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        cha[t1] = t2;</span><br><span class="line">        <span class="keyword">if</span>(rnk[t1] == rnk[t2]) rnk[t2]++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;hint&quot;&gt;&lt;a href=&quot;#hint&quot; class=&quot;headerlink&quot; title=&quot;hint&quot;&gt;&lt;/a&gt;hint&lt;/h2&gt;&lt;p&gt;用于划分属性&lt;br&gt;构造O(n)  查询近似O(1)&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;tab
-      
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://weibolu.online/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
-    
-      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
