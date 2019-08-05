@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/07/23/图论2 —— 最短路问题/">
+    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/08/04/基础算法3 —— 日期推测星期数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wei Bolu">
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/23/图论2 —— 最短路问题/" itemprop="url">图论2 —— 最短路问题</a></h1>
+                <a class="post-title-link" href="/2019/08/04/基础算法3 —— 日期推测星期数/" itemprop="url">基础算法3 —— 日期推测星期数</a></h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-23T14:12:25+08:00">
-                2019-07-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T08:31:03+08:00">
+                2019-08-04
               </time>
             
 
@@ -328,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础图论/" itemprop="url" rel="index">
-                    <span itemprop="name">基础图论</span>
+                  <a href="/categories/ACM基础算法/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM基础算法</span>
                   </a>
                 </span>
 
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2019/07/23/图论2 —— 最短路问题/" class="leancloud_visitors" data-flag-title="图论2 —— 最短路问题">
+             <span id="/2019/08/04/基础算法3 —— 日期推测星期数/" class="leancloud_visitors" data-flag-title="基础算法3 —— 日期推测星期数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,14 +378,15 @@
       
         
           
-          hint在此记录图论中最短路问题的几种解法ps: 本篇博客仅记录算法思想，模板并不能直接用。
-Dijkstra算法求一个图中两个点之间最短距离的最快的一种方法，要求路径的花费不能有负的。
-原始版本时间复杂度：O(n^2)记录所有点到起点的最短路径，每次从未松驰过的点取出距离起点最短的点（此处可以用优先队列优化），并用它来更新到未松驰过的点的距离，进行n-1次松驰后即可求得其余顶点到起点的最短距离，可以用邻接矩阵或者邻接链表实现。
-模板12345678910111213141516171819202
+          蔡勒公式一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几
+给定日期为yy-mm-dd其中月份若为1月或2月，要记作上一年的13月和14月。
+则其对应星期数为：
+int c = yy/100;int d = yy%100;week = (c/4) - 2c + (d+d/4) + (13  (mm+1)/5) + dd - 1;if(week &lt; 0) week = (week + (-week/7+1) * 7)%7;else week %= 7;
+注意week可能为负值，这样最终
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/23/图论2 —— 最短路问题/#more" rel="contents">
+            <a class="btn" href="/2019/08/04/基础算法3 —— 日期推测星期数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -545,6 +546,168 @@ Dijkstra算法求一个图中两个点之间最短距离的最快的一种方法
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/23/图论3 —— 最大流问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/07/23/图论2 —— 最短路问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wei Bolu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="微波炉 de Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/23/图论2 —— 最短路问题/" itemprop="url">图论2 —— 最短路问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-23T14:12:25+08:00">
+                2019-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础图论/" itemprop="url" rel="index">
+                    <span itemprop="name">基础图论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/07/23/图论2 —— 最短路问题/" class="leancloud_visitors" data-flag-title="图论2 —— 最短路问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          hint在此记录图论中最短路问题的几种解法ps: 本篇博客仅记录算法思想，模板并不能直接用。
+Dijkstra算法求一个图中两个点之间最短距离的最快的一种方法，要求路径的花费不能有负的。
+原始版本时间复杂度：O(n^2)记录所有点到起点的最短路径，每次从未松驰过的点取出距离起点最短的点（此处可以用优先队列优化），并用它来更新到未松驰过的点的距离，进行n-1次松驰后即可求得其余顶点到起点的最短距离，可以用邻接矩阵或者邻接链表实现。
+模板12345678910111213141516171819202
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/23/图论2 —— 最短路问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1032,166 +1195,6 @@ KM算法
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/16/图论1 —— 匈牙利算法和KM算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://weibolu.online/2019/07/15/LIFE5 —— ALL IN ONE/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wei Bolu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="微波炉 de Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/15/LIFE5 —— ALL IN ONE/" itemprop="url">LIFE5 —— ALL IN ONE</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T23:04:59+08:00">
-                2019-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/LIFE/" itemprop="url" rel="index">
-                    <span itemprop="name">LIFE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/07/15/LIFE5 —— ALL IN ONE/" class="leancloud_visitors" data-flag-title="LIFE5 —— ALL IN ONE">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          2019.08.02现在是2号的凌晨，终于还是把回家的时间给推迟了，毕竟多校都过了一半了，我们还一直在倒数的位置，有点焦急，昨天更是只签了个到。被卡常数是真的难受呀。顺手看了眼至今的总过题数，竟然只有近300题，真是水的不行呀，立个flag，5天过后我再来看看，能不能上300。
-2019.07.22对多校满怀期待，想着能打好看一点呢，结果又被吊锤，要不是队友及时补救就要爆零了。emmm写了一下午的迪杰斯特拉也没能贪心出来，还是方法不对呀。多校的难度果然惊人，但还是有400+的队伍过了，其实只是一个
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/15/LIFE5 —— ALL IN ONE/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1918,7 +1921,7 @@ KM算法
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1929,7 +1932,7 @@ KM算法
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1940,7 +1943,7 @@ KM算法
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

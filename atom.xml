@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weibolu.online/"/>
-  <updated>2019-07-30T17:36:21.771Z</updated>
+  <updated>2019-08-04T17:32:03.561Z</updated>
   <id>https://weibolu.online/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基础算法3 —— 日期推测星期数</title>
+    <link href="https://weibolu.online/2019/08/04/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%953%20%E2%80%94%E2%80%94%20%E6%97%A5%E6%9C%9F%E6%8E%A8%E6%B5%8B%E6%98%9F%E6%9C%9F%E6%95%B0/"/>
+    <id>https://weibolu.online/2019/08/04/基础算法3 —— 日期推测星期数/</id>
+    <published>2019-08-04T00:31:03.000Z</published>
+    <updated>2019-08-04T17:32:03.561Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="蔡勒公式"><a href="#蔡勒公式" class="headerlink" title="蔡勒公式"></a>蔡勒公式</h2><p>一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几</p><p>给定日期为yy-mm-dd<br>其中月份若为1月或2月，要记作上一年的13月和14月。</p><p>则其对应星期数为：</p><p>int c = yy/100;<br>int d = yy%100;<br>week = (c/4) - 2<em>c + (d+d/4) + (13 </em> (mm+1)/5) + dd - 1;<br>if(week &lt; 0) week = (week + (-week/7+1) * 7)%7;<br>else week %= 7;</p><p>注意week可能为负值，这样最终得到的week为0就为周日，为1就为周一，依此类推。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;蔡勒公式&quot;&gt;&lt;a href=&quot;#蔡勒公式&quot; class=&quot;headerlink&quot; title=&quot;蔡勒公式&quot;&gt;&lt;/a&gt;蔡勒公式&lt;/h2&gt;&lt;p&gt;一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几&lt;/p&gt;
+&lt;p&gt;给定日期为yy-mm-dd&lt;br&gt;其中月份若为1月
+      
+    
+    </summary>
+    
+      <category term="ACM基础算法" scheme="https://weibolu.online/categories/ACM%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图论3 —— 最大流问题</title>
+    <link href="https://weibolu.online/2019/07/23/%E5%9B%BE%E8%AE%BA3%20%E2%80%94%E2%80%94%20%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/"/>
+    <id>https://weibolu.online/2019/07/23/图论3 —— 最大流问题/</id>
+    <published>2019-07-23T06:12:25.000Z</published>
+    <updated>2019-07-28T02:09:57.985Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="基础图论" scheme="https://weibolu.online/categories/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
+    
+    
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="基础图论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>图论2 —— 最短路问题</title>
@@ -32,26 +78,6 @@
         &lt;h2 id=&quot;hint&quot;&gt;&lt;a href=&quot;#hint&quot; class=&quot;headerlink&quot; title=&quot;hint&quot;&gt;&lt;/a&gt;hint&lt;/h2&gt;&lt;p&gt;在此记录图论中最短路问题的几种解法&lt;br&gt;ps: 本篇博客仅记录算法思想，模板并不能直接用。&lt;/p&gt;
 &lt;h2 id=&quot;Dij
       
-    
-    </summary>
-    
-      <category term="基础图论" scheme="https://weibolu.online/categories/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
-    
-    
-      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
-    
-      <category term="基础图论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图论3 —— 最大流问题</title>
-    <link href="https://weibolu.online/2019/07/23/%E5%9B%BE%E8%AE%BA3%20%E2%80%94%E2%80%94%20%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/"/>
-    <id>https://weibolu.online/2019/07/23/图论3 —— 最大流问题/</id>
-    <published>2019-07-23T06:12:25.000Z</published>
-    <updated>2019-07-28T02:09:57.985Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
@@ -140,31 +166,6 @@
       <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="基础图论" scheme="https://weibolu.online/tags/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LIFE5 —— ALL IN ONE</title>
-    <link href="https://weibolu.online/2019/07/15/LIFE5%20%E2%80%94%E2%80%94%20ALL%20IN%20ONE/"/>
-    <id>https://weibolu.online/2019/07/15/LIFE5 —— ALL IN ONE/</id>
-    <published>2019-07-15T15:04:59.000Z</published>
-    <updated>2019-08-01T17:25:52.824Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="2019-08-02"><a href="#2019-08-02" class="headerlink" title="2019.08.02"></a>2019.08.02</h3><p>现在是2号的凌晨，终于还是把回家的时间给推迟了，毕竟多校都过了一半了，我们还一直在倒数的位置，有点焦急，昨天更是只签了个到。被卡常数是真的难受呀。顺手看了眼至今的总过题数，竟然只有近300题，真是水的不行呀，立个flag，5天过后我再来看看，能不能上300。</p><h3 id="2019-07-22"><a href="#2019-07-22" class="headerlink" title="2019.07.22"></a>2019.07.22</h3><p>对多校满怀期待，想着能打好看一点呢，结果又被吊锤，要不是队友及时补救就要爆零了。emmm写了一下午的迪杰斯特拉也没能贪心出来，还是方法不对呀。多校的难度果然惊人，但还是有400+的队伍过了，其实只是一个最大流的模板题（只是模板题。。）稍微有点打击，不过这才说明有进步空间呀（逻辑鬼才）</p><h3 id="2019-07-21"><a href="#2019-07-21" class="headerlink" title="2019.07.21"></a>2019.07.21</h3><p>emmm，自己果然还是菜呀，被学弟锤了。。。<br>真的是一时之间无颜以对。<br>新的组队名单也出来了，还是老的队友，我也比较信任。通过几次个人赛我也发现了一个现象，其实我们队里并没有强的变态的人，给我的感觉就是有差距但是是可以弥补的，希望不是我的错觉吧，这个暑假真的是很关键了，希望暑假过后可以问心无愧吧，果然让自己忙起来后之前那些乱七八糟的问题都不是什么问题了呢。<br>课设也交上去了，整个过程完全没有感觉，可能是因为选题简单吧，没能亲手设计一个简易cpu有点遗憾了，希望有机会能弥补一下吧。</p><h3 id="2019-07-16"><a href="#2019-07-16" class="headerlink" title="2019.07.16"></a>2019.07.16</h3><p>昨天晚上很晚才睡，但还是迟迟睡不着。<br>躺在床上翻来覆去想了很久，一直在想自己毕业后要怎么办。<br>上高中的时候想的最多的是将来要成为一个什么样的人，幻想着自己的工作和生活，还有家庭。<br>但现在就现实多了。<br>如果自己毕业了，面临的现状就是要啥没啥，甚至连女朋友都没有。<br>而我还是一个喜欢定目标的人，那么之后的一切都要由我来创造。<br>这种感觉就像骑砍里最高难度加直面人生再加目标统一大陆一样。<br>盘算了下手里的牌后感觉自己冷静了许多，果然还是要更努力才行啊。<br>也想了下找女朋友这个问题，上大学以来一直没有想过这个问题是因为自己并不关心，也没有遇到合适的人。<br>但最近这个问题好像没有那么好解答了，我也分不清楚这是好事还是坏事。<br>心里开始有一点动摇了。<br>希望之后可以找到答案吧，最好是最优解。</p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>昨天受到了点启发，以后的感想什么的都放在这里好了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;2019-08-02&quot;&gt;&lt;a href=&quot;#2019-08-02&quot; class=&quot;headerlink&quot; title=&quot;2019.08.02&quot;&gt;&lt;/a&gt;2019.08.02&lt;/h3&gt;&lt;p&gt;现在是2号的凌晨，终于还是把回家的时间给推迟了，毕竟多校都过了一半了，我们还
-      
-    
-    </summary>
-    
-      <category term="LIFE" scheme="https://weibolu.online/categories/LIFE/"/>
-    
-    
-      <category term="What is life?" scheme="https://weibolu.online/tags/What-is-life/"/>
     
   </entry>
   
@@ -359,7 +360,7 @@
     <link href="https://weibolu.online/2019/05/06/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%952%20%E2%80%94%E2%80%94%20%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     <id>https://weibolu.online/2019/05/06/基础算法2 —— 快速幂/</id>
     <published>2019-05-06T00:31:03.000Z</published>
-    <updated>2019-05-19T14:47:21.946Z</updated>
+    <updated>2019-08-04T17:23:09.246Z</updated>
     
     <content type="html"><![CDATA[<h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_pow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> base = a, ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans *= base;</span><br><span class="line">        base *= base;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -488,27 +489,29 @@
   </entry>
   
   <entry>
-    <title>LIFE4 —— 最近打算</title>
-    <link href="https://weibolu.online/2019/04/23/LIFE4%20%E2%80%94%E2%80%94%20%E6%9C%80%E8%BF%91%E6%89%93%E7%AE%97/"/>
-    <id>https://weibolu.online/2019/04/23/LIFE4 —— 最近打算/</id>
-    <published>2019-04-23T15:04:59.000Z</published>
-    <updated>2019-07-16T01:46:38.795Z</updated>
+    <title>数据结构3 —— 并查集</title>
+    <link href="https://weibolu.online/2019/04/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%843%20%E2%80%94%E2%80%94%20%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    <id>https://weibolu.online/2019/04/18/数据结构3 —— 并查集/</id>
+    <published>2019-04-18T15:46:28.000Z</published>
+    <updated>2019-05-15T12:42:06.864Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近状态不太好。。。<br>cf一个不小心就连掉了100分，我的篮名(っ °Д °;)っ<br>而且最近一直被各种dp虐，真的要自闭了ヽ(<em>。&gt;Д&lt;)o゜&gt;)<br>马上又要期中考试了，也要开始着手准备(/▽＼)<br>前天也去了学校的acm选拔赛，想来已经入坑一年了，去年这个时候真的是特别侥幸才在最后三分钟过了一道题，勉强进入了预备役，不过到现在还没有打出像样的成绩，一直在被虐。。。<br>额，说起来其实进步也不少，最起码今年的选拔赛我基本都可以一眼看出是什么题目了（大二老狗要是还看不出来。。。）<br>心里也算是一直有着自己的梦想吧，总想着哪天我也可以很厉害，去哪里拿个金奖啦之类的(￣︶￣</em>))咸鱼的梦。。。</p><p>可能我是个比较乐观的人吧，总想着一切皆有可能，尽管有些不切实际，有些中二，但这就是我的青春了，不是吗？我应该感激自己成功走到了acm这条路上，最起码多年后我回忆起这段时光我也会觉得激动，我也不会后悔！</p><h3 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h3><p>之后要开始做一段时间的dp了，感觉这个就像基本功一样，如果缺少了这个素质之后可能会很艰难。<br>然后就是准备下四省赛了，还有一个月的时间，这其实也是我们队伍的第一场正式比赛，虽然目测我们队实力最弱，但我要全力以赴来要应对这场比赛了，就定个小目标最少拿银吧。<br>cf的分数要再上上，距离5月还有三场，定个小目标上到1700+<br>最后准备下期中考试( •̀ ω •́ )✧</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>用于划分属性<br>构造O(n)  查询近似O(1)<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> cha[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cha[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findd</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cha[a] == a) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> findd(cha[a]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unite</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A = findd(a);</span><br><span class="line">    <span class="keyword">int</span> B = findd(b);</span><br><span class="line">    <span class="keyword">if</span>(A == B) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">else</span> cha[B] = A;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//优化</span></span><br><span class="line"><span class="comment">//迭代查找函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getf</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = v, t;</span><br><span class="line">    <span class="keyword">while</span>(f[p] != p) p = f[p];</span><br><span class="line">    <span class="keyword">int</span> x = v;</span><br><span class="line">    <span class="keyword">while</span>(x != p) &#123;t = f[x]; f[x] = p; x = t;&#125;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按秩合并  数据较多时合并优化为log(n),额外花费空间O(n)</span></span><br><span class="line"><span class="keyword">int</span> rnk[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t1 = getf(x), t2 = getf(y);</span><br><span class="line">    <span class="keyword">if</span>(t1 == t2) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(rnk[t1] &gt; rnk[t2]) cha[t2] = t1;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        cha[t1] = t2;</span><br><span class="line">        <span class="keyword">if</span>(rnk[t1] == rnk[t2]) rnk[t2]++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;最近&quot;&gt;&lt;a href=&quot;#最近&quot; class=&quot;headerlink&quot; title=&quot;最近&quot;&gt;&lt;/a&gt;最近&lt;/h3&gt;&lt;p&gt;最近状态不太好。。。&lt;br&gt;cf一个不小心就连掉了100分，我的篮名(っ °Д °;)っ&lt;br&gt;而且最近一直被各种dp虐，真的要自闭了ヽ(&lt;
+        &lt;h2 id=&quot;hint&quot;&gt;&lt;a href=&quot;#hint&quot; class=&quot;headerlink&quot; title=&quot;hint&quot;&gt;&lt;/a&gt;hint&lt;/h2&gt;&lt;p&gt;用于划分属性&lt;br&gt;构造O(n)  查询近似O(1)&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;tab
       
     
     </summary>
     
-      <category term="LIFE" scheme="https://weibolu.online/categories/LIFE/"/>
+      <category term="数据结构" scheme="https://weibolu.online/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="What is life?" scheme="https://weibolu.online/tags/What-is-life/"/>
+      <category term="ACM模板" scheme="https://weibolu.online/tags/ACM%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="数据结构" scheme="https://weibolu.online/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
