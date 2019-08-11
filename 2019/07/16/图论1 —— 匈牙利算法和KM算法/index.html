@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="微波炉 de Blogs">
 <meta property="og:description" content="用途匈牙利算法用来求解二分图的最大匹配，即使匹配中的边数最大；时间复杂度为O(VE)   V为二分图左边的顶点数，E为二分图中边的数目。 KM算法KM算法则是用来求二分图的最佳完美匹配，即给边加上权值后求匹配中权值和的最大值;时间复杂度为O(n^4)可以优化到O(n^3),不过实际上效果相差并不大。 这两个问题也可以通过网络流来求解，但没有这两个算法容易写。 传送门关于这两个算法的讲解也比较多，就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-16T03:10:18.579Z">
+<meta property="og:updated_time" content="2019-08-11T18:28:27.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图论1 —— 匈牙利算法和KM算法">
 <meta name="twitter:description" content="用途匈牙利算法用来求解二分图的最大匹配，即使匹配中的边数最大；时间复杂度为O(VE)   V为二分图左边的顶点数，E为二分图中边的数目。 KM算法KM算法则是用来求二分图的最佳完美匹配，即给边加上权值后求匹配中权值和的最大值;时间复杂度为O(n^4)可以优化到O(n^3),不过实际上效果相差并不大。 这两个问题也可以通过网络流来求解，但没有这两个算法容易写。 传送门关于这两个算法的讲解也比较多，就">
@@ -183,9 +183,7 @@
       </header>
     
 
-    <!-- 目录内容 -->
 
-<!-- 目录内容结束 -->
 
 
 
@@ -328,6 +326,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用途"><span class="toc-number">1.</span> <span class="toc-text">用途</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#匈牙利算法"><span class="toc-number">1.1.</span> <span class="toc-text">匈牙利算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KM算法"><span class="toc-number">1.2.</span> <span class="toc-text">KM算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传送门"><span class="toc-number">2.</span> <span class="toc-text">传送门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用技巧"><span class="toc-number">2.1.</span> <span class="toc-text">使用技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">3.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#匈牙利算法-1"><span class="toc-number">3.1.</span> <span class="toc-text">匈牙利算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KM算法O-n-4"><span class="toc-number">3.2.</span> <span class="toc-text">KM算法O(n^4)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KM算法O-n-3"><span class="toc-number">3.3.</span> <span class="toc-text">KM算法O(n^3)</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -523,11 +534,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
