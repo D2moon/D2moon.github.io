@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数论5 —— FFT | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="详解傅里叶变换详解FFT详细解析FFT类封装和三个例题 理解FFT即快速傅里叶变换作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想 模板网上大部分模板都是kuangbin的 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
+  <meta name="description" content="HintFFT一直是个我觉得很难的地方，在此就记录下几个详解和模板吧。">
 <meta name="keywords" content="ACM模板,基础数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论5 —— FFT">
 <meta property="og:url" content="https://weibolu.online/2019/05/05/数论5 —— FFT/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="详解傅里叶变换详解FFT详细解析FFT类封装和三个例题 理解FFT即快速傅里叶变换作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想 模板网上大部分模板都是kuangbin的 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
+<meta property="og:description" content="HintFFT一直是个我觉得很难的地方，在此就记录下几个详解和模板吧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-26T06:53:46.655Z">
+<meta property="og:updated_time" content="2019-08-12T03:27:17.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数论5 —— FFT">
-<meta name="twitter:description" content="详解傅里叶变换详解FFT详细解析FFT类封装和三个例题 理解FFT即快速傅里叶变换作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想 模板网上大部分模板都是kuangbin的 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354">
+<meta name="twitter:description" content="HintFFT一直是个我觉得很难的地方，在此就记录下几个详解和模板吧。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p><a href="https://blog.csdn.net/linwanglian1/article/details/56020221" target="_blank" rel="noopener">傅里叶变换详解</a><br><a href="https://zhuanlan.zhihu.com/p/40505277" target="_blank" rel="noopener">FFT详细解析</a><br><a href="https://blog.csdn.net/lymingha0/article/details/46581277" target="_blank" rel="noopener">FFT类封装和三个例题</a></p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>FFT一直是个我觉得很难的地方，在此就记录下几个详解和模板吧。</p>
+<a id="more"></a>
+<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p><a href="https://blog.csdn.net/linwanglian1/article/details/56020221" target="_blank" rel="noopener">傅里叶变换详解</a><br><a href="https://zhuanlan.zhihu.com/p/40505277" target="_blank" rel="noopener">FFT详细解析</a><br><a href="https://blog.csdn.net/lymingha0/article/details/46581277" target="_blank" rel="noopener">FFT类封装和三个例题</a></p>
 <h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>FFT即快速傅里叶变换<br>作用是把原来多项式乘法O(n²)优化到 O(nlogn)，思想也是分治的思想</p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>网上大部分模板都是kuangbin的</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> r, i;</span><br><span class="line">    Complex(<span class="keyword">double</span> _r = <span class="number">0</span>, <span class="keyword">double</span> _i = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        r = _r, i = _i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> + (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r+b.r, i+b.i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> - (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r-b.r, i-b.i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span> * (<span class="keyword">const</span> Complex &amp;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Complex(r*b.r-i*b.i, r*b.i+i*b.r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(Complex y[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, k;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>, j = len/<span class="number">2</span>; i &lt; len<span class="number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; j) swap(y[i], y[j]);</span><br><span class="line">        k = len/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(j &gt;= k) &#123;</span><br><span class="line">            j -= k;</span><br><span class="line">            k /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j &lt; k) j += k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fft</span><span class="params">(Complex y[], <span class="keyword">int</span> len, <span class="keyword">int</span> on)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    change(y, len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> h = <span class="number">2</span>; h &lt;= len; h &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="function">Complex <span class="title">wn</span><span class="params">(<span class="built_in">cos</span>(-on*<span class="number">2</span>*PI/h), <span class="built_in">sin</span>(-on*<span class="number">2</span>*PI/h))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j += h) &#123;</span><br><span class="line">            <span class="function">Complex <span class="title">w</span><span class="params">(<span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = j; k &lt; j+h/<span class="number">2</span>; k++) &#123;</span><br><span class="line">                Complex u = y[k];</span><br><span class="line">                Complex t = w*y[k+h/<span class="number">2</span>];</span><br><span class="line">                y[k] = u+t;</span><br><span class="line">                y[k+h/<span class="number">2</span>] = u-t;</span><br><span class="line">                w = w*wn;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(on == <span class="number">-1</span>) <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        y[i].r /= len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -328,7 +330,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#详解"><span class="toc-number">1.</span> <span class="toc-text">详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解"><span class="toc-number">2.</span> <span class="toc-text">理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">3.</span> <span class="toc-text">模板</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详解"><span class="toc-number">2.</span> <span class="toc-text">详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解"><span class="toc-number">3.</span> <span class="toc-text">理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">4.</span> <span class="toc-text">模板</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -395,7 +397,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -516,11 +518,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,11 +530,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,7 +609,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

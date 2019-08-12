@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>字符串处理2 —— 字典树 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载字典树的构造 hint其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。 模板上述连接中有字典树的三种实现，分别是用矩阵、链表和左右儿子表示法，其中前两种比较常见，最后一种我也不太熟悉φ(*￣0￣)。 不过按着测试结果来看，链表法耗费空间，而且">
+  <meta name="description" content="Hint其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。">
 <meta name="keywords" content="ACM模板,字符串处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串处理2 —— 字典树">
 <meta property="og:url" content="https://weibolu.online/2019/04/23/字符串处理2 —— 字典树/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="转载字典树的构造 hint其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。 模板上述连接中有字典树的三种实现，分别是用矩阵、链表和左右儿子表示法，其中前两种比较常见，最后一种我也不太熟悉φ(*￣0￣)。 不过按着测试结果来看，链表法耗费空间，而且">
+<meta property="og:description" content="Hint其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T03:11:55.612Z">
+<meta property="og:updated_time" content="2019-08-12T03:30:10.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串处理2 —— 字典树">
-<meta name="twitter:description" content="转载字典树的构造 hint其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。 模板上述连接中有字典树的三种实现，分别是用矩阵、链表和左右儿子表示法，其中前两种比较常见，最后一种我也不太熟悉φ(*￣0￣)。 不过按着测试结果来看，链表法耗费空间，而且">
+<meta name="twitter:description" content="Hint其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,8 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="转载"><a href="#转载" class="headerlink" title="转载"></a>转载</h2><p><a href="https://www.cnblogs.com/wenzhixin/p/9417292.html" target="_blank" rel="noopener">字典树的构造</a></p>
-<h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。<br>同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>其实字典树(Trie)还是很容易理解的，就是一棵常规的多叉树，每个分支分别对应不同的字符，这样每个字符都可以用一条从根到叶子节点的路径表示出来。<br>同时，字典树其实记录的就是公共前缀，可以用来查找公共前缀。</p>
+<a id="more"></a>
+<h2 id="转载"><a href="#转载" class="headerlink" title="转载"></a>转载</h2><p><a href="https://www.cnblogs.com/wenzhixin/p/9417292.html" target="_blank" rel="noopener">字典树的构造</a></p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>上述连接中有字典树的三种实现，分别是用矩阵、链表和左右儿子表示法，其中前两种比较常见，最后一种我也不太熟悉φ(*￣0￣)。</p>
 <p>不过按着测试结果来看，链表法耗费空间，而且时间效率较低。<br>矩阵的空间使用和链表差不多，但时间已经很优化了，毕竟是用空间换来的，嘤嘤嘤！<br>而最后一种方式则在时间和空间上达到了最优，时间空间两开花？<br>但之后的AC自动机可以很方便的用链表和矩阵构造，那就把三种都记录下来吧QAQ</p>
 <p>(ps:如果用链表存的话，提交要用c++哦，用g++的话很容易爆内存，因为g++中指针的空间比c++大)</p>
@@ -333,7 +334,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#转载"><span class="toc-number">1.</span> <span class="toc-text">转载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hint"><span class="toc-number">2.</span> <span class="toc-text">hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">3.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">3.1.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-number">3.2.</span> <span class="toc-text">链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#左右儿子法"><span class="toc-number">3.3.</span> <span class="toc-text">左右儿子法</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转载"><span class="toc-number">2.</span> <span class="toc-text">转载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">3.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">3.1.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-number">3.2.</span> <span class="toc-text">链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#左右儿子法"><span class="toc-number">3.3.</span> <span class="toc-text">左右儿子法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -400,7 +401,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -521,11 +522,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,11 +534,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,7 +613,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

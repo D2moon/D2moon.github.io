@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数论3 —— 中国剩余定理 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：123x ≡ 2 (mod 3);x ≡ 4 (mod 5);x ≡ 3 (mod 7); 而中国剩余定理就是来求解这种同余方程组的，又称CRT（Chinese Remainder Th">
+  <meta name="description" content="Hint刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？其实这个问题就是大名鼎鼎的中国剩余定理的来源了！">
 <meta name="keywords" content="ACM模板,基础数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论3 —— 中国剩余定理">
 <meta property="og:url" content="https://weibolu.online/2019/03/14/数论3 —— 中国剩余定理/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="前言刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：123x ≡ 2 (mod 3);x ≡ 4 (mod 5);x ≡ 3 (mod 7); 而中国剩余定理就是来求解这种同余方程组的，又称CRT（Chinese Remainder Th">
+<meta property="og:description" content="Hint刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？其实这个问题就是大名鼎鼎的中国剩余定理的来源了！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:31:37.575Z">
+<meta property="og:updated_time" content="2019-08-12T03:25:13.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数论3 —— 中国剩余定理">
-<meta name="twitter:description" content="前言刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：123x ≡ 2 (mod 3);x ≡ 4 (mod 5);x ≡ 3 (mod 7); 而中国剩余定理就是来求解这种同余方程组的，又称CRT（Chinese Remainder Th">
+<meta name="twitter:description" content="Hint刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？其实这个问题就是大名鼎鼎的中国剩余定理的来源了！">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？<br>虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x ≡ <span class="number">2</span> (mod <span class="number">3</span>);</span><br><span class="line">x ≡ <span class="number">4</span> (mod <span class="number">5</span>);</span><br><span class="line">x ≡ <span class="number">3</span> (mod <span class="number">7</span>);</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>刚学习c语言时有这么一道题目，韩信点兵：军队人数未知，但三人站成一列剩余2人，5人站成一列剩余4人，7人站成一列剩余3人，求军队至少有多少人？<br>其实这个问题就是大名鼎鼎的中国剩余定理的来源了！</p>
+<a id="more"></a>
+<p>虽然当时是直接遍历求解的，但实际上这个问题可以转化为一个同余方程组：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x ≡ <span class="number">2</span> (mod <span class="number">3</span>);</span><br><span class="line">x ≡ <span class="number">4</span> (mod <span class="number">5</span>);</span><br><span class="line">x ≡ <span class="number">3</span> (mod <span class="number">7</span>);</span><br></pre></td></tr></table></figure></p>
 <p>而<strong>中国剩余定理</strong>就是来求解这种同余方程组<br>的，又称CRT（Chinese Remainder Theorem）。</p>
 <p>在此之前我们要先回顾下之前的拓展欧几里德算法：<a href="https://weibolu.online/2019/03/11/gcd%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/">gcd 与 exgcd</a></p>
 <h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><h3 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h3><p>首先考虑最简单的一种情况：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x ≡ a1 (mod p1);</span><br><span class="line">x ≡ a2 (mod p2);</span><br><span class="line">gcd(p1, p2) = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
@@ -337,7 +339,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中国剩余定理"><span class="toc-number">2.</span> <span class="toc-text">中国剩余定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本形式"><span class="toc-number">2.1.</span> <span class="toc-text">基本形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最终表述"><span class="toc-number">2.1.1.</span> <span class="toc-text">最终表述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模板代码"><span class="toc-number">2.1.2.</span> <span class="toc-text">模板代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓展形式"><span class="toc-number">2.2.</span> <span class="toc-text">拓展形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最终表述-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">最终表述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模板代码-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">模板代码</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中国剩余定理"><span class="toc-number">2.</span> <span class="toc-text">中国剩余定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本形式"><span class="toc-number">2.1.</span> <span class="toc-text">基本形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最终表述"><span class="toc-number">2.1.1.</span> <span class="toc-text">最终表述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模板代码"><span class="toc-number">2.1.2.</span> <span class="toc-text">模板代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓展形式"><span class="toc-number">2.2.</span> <span class="toc-text">拓展形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最终表述-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">最终表述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模板代码-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">模板代码</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -404,7 +406,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -525,11 +527,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,11 +539,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,7 +618,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>基础算法1 —— 快速排序 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[j]">
+  <meta name="description" content="Hint很高效的排序算法，思想也十分有趣。">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础算法1 —— 快速排序">
 <meta property="og:url" content="https://weibolu.online/2019/04/02/基础算法1 —— 快速排序/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[j]">
+<meta property="og:description" content="Hint很高效的排序算法，思想也十分有趣。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-10T05:39:03.097Z">
+<meta property="og:updated_time" content="2019-08-12T02:59:41.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础算法1 —— 快速排序">
-<meta name="twitter:description" content="12345678910111213141516int s[maxn];void quick_sort(int l, int r)&amp;#123;    if(l &amp;lt; r) &amp;#123;        int i = l, j = r, x = s[i];        while(i &amp;lt; j) &amp;#123;            while(i &amp;lt; j &amp;amp;&amp;amp; s[j]">
+<meta name="twitter:description" content="Hint很高效的排序算法，思想也十分有趣。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[i];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &gt;= x) j--;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[i++] = s[j];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &lt;= x) i++;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(l, i);</span><br><span class="line">        quick_sort(i+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>很高效的排序算法，思想也十分有趣。<br><a id="more"></a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[i];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &gt;= x) j--;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[i++] = s[j];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &lt;= x) i++;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(l, i);</span><br><span class="line">        quick_sort(i+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -321,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -388,7 +390,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -509,11 +511,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +523,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,7 +602,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

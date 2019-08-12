@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数论1 —— gcd算法详解 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！ 欧几里德算法这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。 123int gcd(int a, int b) &amp;#123;    return b == 0 ? a : gcd(b, a%b);&amp;#125; 同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：">
+  <meta name="description" content="Hint数论一直是我十分不擅长的一个领域，在此学习一下欧几里德算法和拓展欧几里德算法吧！">
 <meta name="keywords" content="ACM模板,基础数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论1 —— gcd算法详解">
 <meta property="og:url" content="https://weibolu.online/2019/03/11/数论1 —— gcd算法详解/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="前言数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！ 欧几里德算法这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。 123int gcd(int a, int b) &amp;#123;    return b == 0 ? a : gcd(b, a%b);&amp;#125; 同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：">
+<meta property="og:description" content="Hint数论一直是我十分不擅长的一个领域，在此学习一下欧几里德算法和拓展欧几里德算法吧！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:31:30.039Z">
+<meta property="og:updated_time" content="2019-08-12T03:20:04.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数论1 —— gcd算法详解">
-<meta name="twitter:description" content="前言数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！ 欧几里德算法这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。 123int gcd(int a, int b) &amp;#123;    return b == 0 ? a : gcd(b, a%b);&amp;#125; 同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：">
+<meta name="twitter:description" content="Hint数论一直是我十分不擅长的一个领域，在此学习一下欧几里德算法和拓展欧几里德算法吧！">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数论一直是我十分不擅长的一个领域，这次就先按照紫皮书的顺序来初步学习一下基础数论吧！</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>数论一直是我十分不擅长的一个领域，在此学习一下欧几里德算法和拓展欧几里德算法吧！</p>
+<a id="more"></a>
 <h2 id="欧几里德算法"><a href="#欧几里德算法" class="headerlink" title="欧几里德算法"></a>欧几里德算法</h2><p>这应该是我数论中用过的最多的算法了——辗转相除法，可用来求a与b的最大公约数。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a%b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>同时，也可利用此式求得最小公倍数(注意此处要先除后乘，否则可能溢出)：</p>
@@ -336,7 +337,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#欧几里德算法"><span class="toc-number">2.</span> <span class="toc-text">欧几里德算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展欧几里德算法"><span class="toc-number">3.</span> <span class="toc-text">拓展欧几里德算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速欧几里德算法"><span class="toc-number">4.</span> <span class="toc-text">快速欧几里德算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结-amp-练习"><span class="toc-number">5.</span> <span class="toc-text">小结&amp;练习</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#欧几里德算法"><span class="toc-number">2.</span> <span class="toc-text">欧几里德算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展欧几里德算法"><span class="toc-number">3.</span> <span class="toc-text">拓展欧几里德算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速欧几里德算法"><span class="toc-number">4.</span> <span class="toc-text">快速欧几里德算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结-amp-练习"><span class="toc-number">5.</span> <span class="toc-text">小结&amp;练习</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -403,7 +404,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -524,11 +525,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,11 +537,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,7 +616,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数据结构4 —— RMQ | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hint查询区间特征值（最大、最小……）利用区间二分和dp思想，加快操作预处理 O(nlogn)   查询O(1) 模板123456789101112131415161718const int maxn = 100;int d[maxn][maxn];void RMQ_init(const vector&amp;lt;int&amp;gt;&amp;amp; A)&amp;#123;    int n = A.size();">
+  <meta name="description" content="Hint查询区间特征值（最大、最小……），利用区间二分和dp思想，加速查询。预处理 O(nlogn)   查询O(1)">
 <meta name="keywords" content="ACM模板,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构4 —— RMQ">
 <meta property="og:url" content="https://weibolu.online/2019/04/24/数据结构4 —— RMQ/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="hint查询区间特征值（最大、最小……）利用区间二分和dp思想，加快操作预处理 O(nlogn)   查询O(1) 模板123456789101112131415161718const int maxn = 100;int d[maxn][maxn];void RMQ_init(const vector&amp;lt;int&amp;gt;&amp;amp; A)&amp;#123;    int n = A.size();">
+<meta property="og:description" content="Hint查询区间特征值（最大、最小……），利用区间二分和dp思想，加速查询。预处理 O(nlogn)   查询O(1)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T04:11:07.884Z">
+<meta property="og:updated_time" content="2019-08-12T03:16:36.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构4 —— RMQ">
-<meta name="twitter:description" content="hint查询区间特征值（最大、最小……）利用区间二分和dp思想，加快操作预处理 O(nlogn)   查询O(1) 模板123456789101112131415161718const int maxn = 100;int d[maxn][maxn];void RMQ_init(const vector&amp;lt;int&amp;gt;&amp;amp; A)&amp;#123;    int n = A.size();">
+<meta name="twitter:description" content="Hint查询区间特征值（最大、最小……），利用区间二分和dp思想，加速查询。预处理 O(nlogn)   查询O(1)">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>查询区间特征值（最大、最小……）<br>利用区间二分和dp思想，加快操作<br>预处理 O(nlogn)   查询O(1)</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>查询区间特征值（最大、最小……），利用区间二分和dp思想，加速查询。<br>预处理 O(nlogn)   查询O(1)</p>
+<a id="more"></a>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> d[maxn][maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">RMQ_init</span><span class="params">(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = A.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) d[i][<span class="number">0</span>] = A[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; (<span class="number">1</span>&lt;&lt;j) &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i + (<span class="number">1</span>&lt;&lt;j) - <span class="number">1</span> &lt; n; i++)</span><br><span class="line">        d[i][j] = min(d[i][j<span class="number">-1</span>], d[i+(<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>))][j<span class="number">-1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">RMQ</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>&lt;&lt;(k+<span class="number">1</span>) &lt;= R-L+<span class="number">1</span>) k++;</span><br><span class="line">    <span class="keyword">return</span> min(d[L][k], d[R-(<span class="number">1</span>&lt;&lt;k)+<span class="number">1</span>][k]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
@@ -326,7 +327,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hint"><span class="toc-number">1.</span> <span class="toc-text">hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">2.</span> <span class="toc-text">模板</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">2.</span> <span class="toc-text">模板</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -393,7 +394,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -514,11 +515,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,11 +527,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,7 +606,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

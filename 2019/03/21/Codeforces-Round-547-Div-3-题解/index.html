@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>Codeforces Round #547 (Div. 3) 题解 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。 A题题目大意：判断一个数能否通过与2，3相乘得到另一个数字。 分析清晰的题意，简单的数据，水题 code1234567891011121314151617181920212223242526272829303132#include&amp;lt;iostre">
+  <meta name="description" content="Hint又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。">
 <meta name="keywords" content="codeforces">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round #547 (Div. 3) 题解">
 <meta property="og:url" content="https://weibolu.online/2019/03/21/Codeforces-Round-547-Div-3-题解/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。 A题题目大意：判断一个数能否通过与2，3相乘得到另一个数字。 分析清晰的题意，简单的数据，水题 code1234567891011121314151617181920212223242526272829303132#include&amp;lt;iostre">
+<meta property="og:description" content="Hint又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T03:35:28.868Z">
+<meta property="og:updated_time" content="2019-08-12T03:39:45.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round #547 (Div. 3) 题解">
-<meta name="twitter:description" content="又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。 A题题目大意：判断一个数能否通过与2，3相乘得到另一个数字。 分析清晰的题意，简单的数据，水题 code1234567891011121314151617181920212223242526272829303132#include&amp;lt;iostre">
+<meta name="twitter:description" content="Hint又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>又到了我最喜欢的cf环节了，而且还是最简单的div3，说实在的div3的难度很低了，只要脑子清醒，完全可以AK（￣︶￣）↗　，不过也有点考验手速啦。</p>
+<a id="more"></a>
 <h2 id="A题"><a href="#A题" class="headerlink" title="A题"></a>A题</h2><h3 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h3><p>判断一个数能否通过与2，3相乘得到另一个数字。</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>清晰的题意，简单的数据，水题</p>
 <h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll a, b;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b % a != <span class="number">0</span>) &#123;<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>; <span class="keyword">continue</span>;&#125;</span><br><span class="line">        ll c = b/a;</span><br><span class="line">        ll num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(c % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            num++;</span><br><span class="line">            c /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(c % <span class="number">3</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            num++;</span><br><span class="line">            c /= <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -344,7 +345,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A题"><span class="toc-number">1.</span> <span class="toc-text">A题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意："><span class="toc-number">1.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析"><span class="toc-number">1.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code"><span class="toc-number">1.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B题"><span class="toc-number">2.</span> <span class="toc-text">B题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-1"><span class="toc-number">2.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-1"><span class="toc-number">2.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-1"><span class="toc-number">2.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C题"><span class="toc-number">3.</span> <span class="toc-text">C题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-2"><span class="toc-number">3.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-2"><span class="toc-number">3.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-2"><span class="toc-number">3.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D题"><span class="toc-number">4.</span> <span class="toc-text">D题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-3"><span class="toc-number">4.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-3"><span class="toc-number">4.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-3"><span class="toc-number">4.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E题"><span class="toc-number">5.</span> <span class="toc-text">E题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-4"><span class="toc-number">5.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-4"><span class="toc-number">5.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-4"><span class="toc-number">5.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F题"><span class="toc-number">6.</span> <span class="toc-text">F题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-5"><span class="toc-number">6.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-5"><span class="toc-number">6.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-5"><span class="toc-number">6.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#G题"><span class="toc-number">7.</span> <span class="toc-text">G题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-6"><span class="toc-number">7.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-6"><span class="toc-number">7.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-6"><span class="toc-number">7.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A题"><span class="toc-number">2.</span> <span class="toc-text">A题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意："><span class="toc-number">2.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析"><span class="toc-number">2.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code"><span class="toc-number">2.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B题"><span class="toc-number">3.</span> <span class="toc-text">B题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-1"><span class="toc-number">3.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-1"><span class="toc-number">3.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-1"><span class="toc-number">3.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C题"><span class="toc-number">4.</span> <span class="toc-text">C题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-2"><span class="toc-number">4.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-2"><span class="toc-number">4.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-2"><span class="toc-number">4.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D题"><span class="toc-number">5.</span> <span class="toc-text">D题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-3"><span class="toc-number">5.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-3"><span class="toc-number">5.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-3"><span class="toc-number">5.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E题"><span class="toc-number">6.</span> <span class="toc-text">E题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-4"><span class="toc-number">6.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-4"><span class="toc-number">6.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-4"><span class="toc-number">6.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F题"><span class="toc-number">7.</span> <span class="toc-text">F题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-5"><span class="toc-number">7.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-5"><span class="toc-number">7.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-5"><span class="toc-number">7.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#G题"><span class="toc-number">8.</span> <span class="toc-text">G题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目大意：-6"><span class="toc-number">8.1.</span> <span class="toc-text">题目大意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-6"><span class="toc-number">8.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-6"><span class="toc-number">8.3.</span> <span class="toc-text">code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -411,7 +412,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -532,11 +533,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,11 +545,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,7 +624,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

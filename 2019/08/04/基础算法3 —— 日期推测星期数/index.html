@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>基础算法3 —— 日期推测星期数 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="蔡勒公式一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几 给定日期为yy-mm-dd其中月份若为1月或2月，要记作上一年的13月和14月。 则其对应星期数为： 123456int c = yy/100;int d = yy%100;week = (c/4) - 2 * c + (d+d/4) + (13 * (mm+1)/5) + dd - 1;if(week &amp;lt; 0) week">
+  <meta name="description" content="Hint蔡勒公式，一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几。">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础算法3 —— 日期推测星期数">
 <meta property="og:url" content="https://weibolu.online/2019/08/04/基础算法3 —— 日期推测星期数/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="蔡勒公式一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几 给定日期为yy-mm-dd其中月份若为1月或2月，要记作上一年的13月和14月。 则其对应星期数为： 123456int c = yy/100;int d = yy%100;week = (c/4) - 2 * c + (d+d/4) + (13 * (mm+1)/5) + dd - 1;if(week &amp;lt; 0) week">
+<meta property="og:description" content="Hint蔡勒公式，一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-05T11:24:29.053Z">
+<meta property="og:updated_time" content="2019-08-12T03:02:10.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础算法3 —— 日期推测星期数">
-<meta name="twitter:description" content="蔡勒公式一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几 给定日期为yy-mm-dd其中月份若为1月或2月，要记作上一年的13月和14月。 则其对应星期数为： 123456int c = yy/100;int d = yy%100;week = (c/4) - 2 * c + (d+d/4) + (13 * (mm+1)/5) + dd - 1;if(week &amp;lt; 0) week">
+<meta name="twitter:description" content="Hint蔡勒公式，一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="蔡勒公式"><a href="#蔡勒公式" class="headerlink" title="蔡勒公式"></a>蔡勒公式</h2><p>一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>蔡勒公式，一个神奇的公式，可以通过日期的具体年月日推测出这天为星期几。</p>
+<a id="more"></a>
 <p>给定日期为yy-mm-dd<br>其中月份若为1月或2月，要记作上一年的13月和14月。</p>
 <p>则其对应星期数为：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">int</span> c = yy/<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> d = yy%<span class="number">100</span>;</span><br><span class="line">week = (c/<span class="number">4</span>) - <span class="number">2</span> * c + (d+d/<span class="number">4</span>) + (<span class="number">13</span> * (mm+<span class="number">1</span>)/<span class="number">5</span>) + dd - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(week &lt; <span class="number">0</span>) week = (week + (-week/<span class="number">7</span>+<span class="number">1</span>) * <span class="number">7</span>)%<span class="number">7</span>;</span><br><span class="line"><span class="keyword">else</span> week %= <span class="number">7</span>;</span><br></pre></td></tr></table></figure>
@@ -289,8 +290,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/07/23/图论2 —— 最短路问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">图论2 —— 最短路问题</div>
+    <a href="/2019/07/23/图论3 —— 最大流问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图论3 —— 最大流问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -317,7 +318,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#蔡勒公式"><span class="toc-number">1.</span> <span class="toc-text">蔡勒公式</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -384,7 +385,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -505,11 +506,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,11 +518,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,7 +597,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

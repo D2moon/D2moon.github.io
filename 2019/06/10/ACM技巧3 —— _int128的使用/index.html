@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>ACM技巧3 —— _int128的使用 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数123456789101112131415161718192021//输入void scan(__int128 &amp;amp;x)//输入&amp;#123;    x = 0;    int f = 1;    char ch;    if((ch = getchar()) == &apos;-&apos;) f = -f;    else x">
+  <meta name="description" content="Hint__int128是128位2进制数据，但要自己写输入输出函数，在此记录下。">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACM技巧3 —— _int128的使用">
 <meta property="og:url" content="https://weibolu.online/2019/06/10/ACM技巧3 —— _int128的使用/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数123456789101112131415161718192021//输入void scan(__int128 &amp;amp;x)//输入&amp;#123;    x = 0;    int f = 1;    char ch;    if((ch = getchar()) == &apos;-&apos;) f = -f;    else x">
+<meta property="og:description" content="Hint__int128是128位2进制数据，但要自己写输入输出函数，在此记录下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-07T10:55:09.679Z">
+<meta property="og:updated_time" content="2019-08-12T03:38:59.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ACM技巧3 —— _int128的使用">
-<meta name="twitter:description" content="__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数123456789101112131415161718192021//输入void scan(__int128 &amp;amp;x)//输入&amp;#123;    x = 0;    int f = 1;    char ch;    if((ch = getchar()) == &apos;-&apos;) f = -f;    else x">
+<meta name="twitter:description" content="Hint__int128是128位2进制数据，但要自己写输入输出函数，在此记录下。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,8 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>__int128是128位2进制数据，一般oj上有该数据类型，但要自己写输入输出函数<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span><span class="params">(__int128 &amp;x)</span><span class="comment">//输入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    <span class="keyword">if</span>((ch = getchar()) == <span class="string">'-'</span>) f = -f;</span><br><span class="line">    <span class="keyword">else</span> x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">while</span>((ch = getchar()) &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">        x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    x *= f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(__int128 x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>), x = -x;</span><br><span class="line">    print(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>__int128是128位2进制数据，但要自己写输入输出函数，在此记录下。</p>
+<a id="more"></a>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span><span class="params">(__int128 &amp;x)</span><span class="comment">//输入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    <span class="keyword">if</span>((ch = getchar()) == <span class="string">'-'</span>) f = -f;</span><br><span class="line">    <span class="keyword">else</span> x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">while</span>((ch = getchar()) &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">        x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    x *= f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(__int128 x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">'-'</span>), x = -x;</span><br><span class="line">    print(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -322,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -389,7 +390,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -510,11 +511,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +523,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,7 +602,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

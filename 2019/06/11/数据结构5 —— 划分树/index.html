@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数据结构5 —— 划分树 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hint用途：用于求区间内第k大值缺点：不能进行更新操作 划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。　　划分树的基本">
+  <meta name="description" content="Hint思想与线段树类似，也是一种十分好用的数据结构，可以用于求区间内第k大值。">
 <meta name="keywords" content="ACM模板,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构5 —— 划分树">
 <meta property="og:url" content="https://weibolu.online/2019/06/11/数据结构5 —— 划分树/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="hint用途：用于求区间内第k大值缺点：不能进行更新操作 划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。　　划分树的基本">
+<meta property="og:description" content="Hint思想与线段树类似，也是一种十分好用的数据结构，可以用于求区间内第k大值。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-14T16:26:45.272Z">
+<meta property="og:updated_time" content="2019-08-12T03:18:26.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构5 —— 划分树">
-<meta name="twitter:description" content="hint用途：用于求区间内第k大值缺点：不能进行更新操作 划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。　　划分树的基本">
+<meta name="twitter:description" content="Hint思想与线段树类似，也是一种十分好用的数据结构，可以用于求区间内第k大值。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,8 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>用途：用于求区间内第k大值<br>缺点：不能进行更新操作</p>
-<p>划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。<br>　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。<br>　　划分树的基本思想就是对于某个区间，把它划分成两个子区间，左边区间的数小于右边区间的数。查找的时候通过记录进入左子树的数的个数，确定下一个查找区间，最后范围缩小到1，就找到了。<br>　　划分树定义为，它的每一个节点保存区间[lft,rht]所有元素，元素顺序与原数组（输入）相同，但是，两个子树的元素为该节点所有元素排序后(rht-lft+1)/2个进入左子树，其余的到右子树，同时维护一个num域，num[i]表示lft-&gt;i这个点有多少个进入了左子树。</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>思想与线段树类似，也是一种十分好用的数据结构，可以用于求区间内第k大值。</p>
+<a id="more"></a>
+<h2 id="划分树"><a href="#划分树" class="headerlink" title="划分树"></a>划分树</h2><p>划分树是一种基于线段树的数据结构。主要用于快速求出(在log(n)的时间复杂度内）序列区间的第k大值。<br>　　查找整序列的第k大值往往采用。然而此方法会破坏原序列，并且需要O(n)的时间复杂度。抑或使用二叉平衡树进行维护，此方法每次查找时间复杂度仅为O(logn)。然而此方法丢失了原序列的顺序信息，无法查找出某区间内的第k大值。<br>　　划分树的基本思想就是对于某个区间，把它划分成两个子区间，左边区间的数小于右边区间的数。查找的时候通过记录进入左子树的数的个数，确定下一个查找区间，最后范围缩小到1，就找到了。<br>　　划分树定义为，它的每一个节点保存区间[lft,rht]所有元素，元素顺序与原数组（输入）相同，但是，两个子树的元素为该节点所有元素排序后(rht-lft+1)/2个进入左子树，其余的到右子树，同时维护一个num域，num[i]表示lft-&gt;i这个点有多少个进入了左子树。</p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> tree[<span class="number">30</span>][MAXN];<span class="comment">//表示每层每个位置的值</span></span><br><span class="line"><span class="keyword">int</span> sorted[MAXN];<span class="comment">//已经排序的数</span></span><br><span class="line"><span class="keyword">int</span> toleft[<span class="number">30</span>][MAXN];<span class="comment">//toleft[p][i]表示第i层从1到i有多少个数分入左边</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> le,<span class="keyword">int</span> r,<span class="keyword">int</span> dep)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(le==r)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=(le+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> same=mid-le+<span class="number">1</span>;<span class="comment">//表示等于中间值而且被分入左边的个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=le;i&lt;=r;i++)</span><br><span class="line">      <span class="keyword">if</span>(tree[dep][i]&lt;sorted[mid])</span><br><span class="line">         same--;</span><br><span class="line">    <span class="keyword">int</span> lpos=le;</span><br><span class="line">    <span class="keyword">int</span> rpos=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=le;i&lt;=r;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(tree[dep][i]&lt;sorted[mid])<span class="comment">//比中间的数小，分入左边</span></span><br><span class="line">             tree[dep+<span class="number">1</span>][lpos++]=tree[dep][i];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(tree[dep][i]==sorted[mid]&amp;&amp;same&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            tree[dep+<span class="number">1</span>][lpos++]=tree[dep][i];</span><br><span class="line">            same--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>  <span class="comment">//比中间值大分入右边</span></span><br><span class="line">            tree[dep+<span class="number">1</span>][rpos++]=tree[dep][i];</span><br><span class="line">        toleft[dep][i]=toleft[dep][le<span class="number">-1</span>]+lpos-le;<span class="comment">//从1到i放左边的个数</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    build(le,mid,dep+<span class="number">1</span>);</span><br><span class="line">    build(mid+<span class="number">1</span>,r,dep+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//查询区间第k大的数，[L,R]是大区间，[le,r]是要查询的小区间</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> L,<span class="keyword">int</span> R,<span class="keyword">int</span> le,<span class="keyword">int</span> r,<span class="keyword">int</span> dep,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(le==r)<span class="keyword">return</span> tree[dep][le];</span><br><span class="line">    <span class="keyword">int</span> mid=(L+R)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> cnt=toleft[dep][r]-toleft[dep][le<span class="number">-1</span>];  <span class="comment">//[le,r]中位于左边的个数</span></span><br><span class="line">    <span class="keyword">if</span>(cnt&gt;=k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//L+要查询的区间前被放在左边的个数</span></span><br><span class="line">        <span class="keyword">int</span> newl=L+toleft[dep][le<span class="number">-1</span>]-toleft[dep][L<span class="number">-1</span>];</span><br><span class="line">        <span class="comment">//左端点加上查询区间会被放在左边的个数</span></span><br><span class="line">        <span class="keyword">int</span> newr=newl+cnt<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> query(L,mid,newl,newr,dep+<span class="number">1</span>,k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">         <span class="keyword">int</span> newr=r+toleft[dep][R]-toleft[dep][r];</span><br><span class="line">         <span class="keyword">int</span> newl=newr-(r-le-cnt);</span><br><span class="line">         <span class="keyword">return</span> query(mid+<span class="number">1</span>,R,newl,newr,dep+<span class="number">1</span>,k-cnt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;<span class="built_in">cin</span> &gt;&gt; tree[<span class="number">0</span>][i]; sorted[i] = tree[<span class="number">0</span>][i];&#125;</span><br><span class="line">        sort(sorted+<span class="number">1</span>, sorted+n+<span class="number">1</span>);</span><br><span class="line">        build(<span class="number">1</span>, n, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> le, r, k;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; le &gt;&gt; r &gt;&gt; k;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; query(<span class="number">1</span>, n, le, r, <span class="number">0</span>, k) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
@@ -327,7 +328,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hint"><span class="toc-number">1.</span> <span class="toc-text">hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">2.</span> <span class="toc-text">模板</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#划分树"><span class="toc-number">2.</span> <span class="toc-text">划分树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">3.</span> <span class="toc-text">模板</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -394,7 +395,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -515,11 +516,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,11 +528,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,7 +607,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>基础算法2 —— 快速幂 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快速幂12345678910int quick_pow(int a, int b)&amp;#123;    int base = a, ans = 1;    while(b) &amp;#123;        if(b &amp;amp; 1) ans *= base;        base *= base;        b &amp;gt;&amp;gt;= 1;    &amp;#125;    return ans;&amp;#125;">
+  <meta name="description" content="Hint很高效的算法，可以把求幂次降低到对数时间复杂度，思想也十分有趣。">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础算法2 —— 快速幂">
 <meta property="og:url" content="https://weibolu.online/2019/05/06/基础算法2 —— 快速幂/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="快速幂12345678910int quick_pow(int a, int b)&amp;#123;    int base = a, ans = 1;    while(b) &amp;#123;        if(b &amp;amp; 1) ans *= base;        base *= base;        b &amp;gt;&amp;gt;= 1;    &amp;#125;    return ans;&amp;#125;">
+<meta property="og:description" content="Hint很高效的算法，可以把求幂次降低到对数时间复杂度，思想也十分有趣。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-04T17:23:09.246Z">
+<meta property="og:updated_time" content="2019-08-12T03:01:04.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础算法2 —— 快速幂">
-<meta name="twitter:description" content="快速幂12345678910int quick_pow(int a, int b)&amp;#123;    int base = a, ans = 1;    while(b) &amp;#123;        if(b &amp;amp; 1) ans *= base;        base *= base;        b &amp;gt;&amp;gt;= 1;    &amp;#125;    return ans;&amp;#125;">
+<meta name="twitter:description" content="Hint很高效的算法，可以把求幂次降低到对数时间复杂度，思想也十分有趣。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_pow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> base = a, ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans *= base;</span><br><span class="line">        base *= base;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>很高效的算法，可以把求幂次降低到对数时间复杂度，思想也十分有趣。<br><a id="more"></a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_pow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> base = a, ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans *= base;</span><br><span class="line">        base *= base;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -322,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#快速幂"><span class="toc-number">1.</span> <span class="toc-text">快速幂</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -389,7 +390,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -510,11 +511,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +523,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,7 +602,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

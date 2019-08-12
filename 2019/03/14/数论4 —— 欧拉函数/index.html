@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数论4 —— 欧拉函数 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：这篇博客里还有欧拉函数在指数取模中的应用https://blog.csdn.net/RaAlGhul/article/details/51778583 欧拉函数定义欧拉函数的意义为；对于一个正整数n, 小于n且和n互质的正整数的个数，记为φ(n)  (注：φ(1) = 1) 性质 如果">
+  <meta name="description" content="Hint在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：这篇博客里还有欧拉函数在指数取模中的应用https://blog.csdn.net/RaAlGhul/article/details/51778583">
 <meta name="keywords" content="ACM模板,基础数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论4 —— 欧拉函数">
 <meta property="og:url" content="https://weibolu.online/2019/03/14/数论4 —— 欧拉函数/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="前言在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：这篇博客里还有欧拉函数在指数取模中的应用https://blog.csdn.net/RaAlGhul/article/details/51778583 欧拉函数定义欧拉函数的意义为；对于一个正整数n, 小于n且和n互质的正整数的个数，记为φ(n)  (注：φ(1) = 1) 性质 如果">
+<meta property="og:description" content="Hint在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：这篇博客里还有欧拉函数在指数取模中的应用https://blog.csdn.net/RaAlGhul/article/details/51778583">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T08:31:42.553Z">
+<meta property="og:updated_time" content="2019-08-12T03:25:50.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数论4 —— 欧拉函数">
-<meta name="twitter:description" content="前言在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：这篇博客里还有欧拉函数在指数取模中的应用https://blog.csdn.net/RaAlGhul/article/details/51778583 欧拉函数定义欧拉函数的意义为；对于一个正整数n, 小于n且和n互质的正整数的个数，记为φ(n)  (注：φ(1) = 1) 性质 如果">
+<meta name="twitter:description" content="Hint在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：这篇博客里还有欧拉函数在指数取模中的应用https://blog.csdn.net/RaAlGhul/article/details/51778583">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数<br>这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：<br><a href="https://www.cnblogs.com/linyujun/p/5194170.html" target="_blank" rel="noopener">这篇博客里还有欧拉函数在指数取模中的应用</a><br><a href="https://blog.csdn.net/RaAlGhul/article/details/51778583" target="_blank" rel="noopener">https://blog.csdn.net/RaAlGhul/article/details/51778583</a></p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>在掌握了之前的几种算法后，终于到了问题的核心：欧拉函数<br>这篇博客中借鉴了以下博客内容(毕竟自己太菜，整理不全)：<br><a href="https://www.cnblogs.com/linyujun/p/5194170.html" target="_blank" rel="noopener">这篇博客里还有欧拉函数在指数取模中的应用</a><br><a href="https://blog.csdn.net/RaAlGhul/article/details/51778583" target="_blank" rel="noopener">https://blog.csdn.net/RaAlGhul/article/details/51778583</a></p>
+<a id="more"></a>
 <h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>欧拉函数的意义为；对于一个正整数n, 小于n且和n互质的正整数的个数，记为φ(n)  (注：φ(1) = 1)</p>
 <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol>
 <li><p>如果n是一个质数，那么比n小的数都和它互质，也就是说φ(n) = n-1。</p>
@@ -358,7 +359,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#欧拉函数"><span class="toc-number">2.</span> <span class="toc-text">欧拉函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性质"><span class="toc-number">2.2.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板"><span class="toc-number">2.3.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#求解单个欧拉函数值phi-n"><span class="toc-number">2.3.1.</span> <span class="toc-text">求解单个欧拉函数值phi(n)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打表求解多个欧拉函数值"><span class="toc-number">2.3.2.</span> <span class="toc-text">打表求解多个欧拉函数值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线性筛"><span class="toc-number">2.3.3.</span> <span class="toc-text">线性筛</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题"><span class="toc-number">2.4.</span> <span class="toc-text">例题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#欧拉函数"><span class="toc-number">2.</span> <span class="toc-text">欧拉函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性质"><span class="toc-number">2.2.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板"><span class="toc-number">2.3.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#求解单个欧拉函数值phi-n"><span class="toc-number">2.3.1.</span> <span class="toc-text">求解单个欧拉函数值phi(n)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打表求解多个欧拉函数值"><span class="toc-number">2.3.2.</span> <span class="toc-text">打表求解多个欧拉函数值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线性筛"><span class="toc-number">2.3.3.</span> <span class="toc-text">线性筛</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题"><span class="toc-number">2.4.</span> <span class="toc-text">例题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -425,7 +426,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -546,11 +547,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,11 +559,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,7 +638,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

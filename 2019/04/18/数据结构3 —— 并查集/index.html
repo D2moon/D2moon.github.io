@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数据结构3 —— 并查集 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hint用于划分属性构造O(n)  查询近似O(1)1234567891011121314151617181920212223242526272829303132333435363738394041424344const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i+">
+  <meta name="description" content="Hint用于划分属性，构造O(n)  查询近似O(1)，十分好写。">
 <meta name="keywords" content="ACM模板,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构3 —— 并查集">
 <meta property="og:url" content="https://weibolu.online/2019/04/18/数据结构3 —— 并查集/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="hint用于划分属性构造O(n)  查询近似O(1)1234567891011121314151617181920212223242526272829303132333435363738394041424344const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i+">
+<meta property="og:description" content="Hint用于划分属性，构造O(n)  查询近似O(1)，十分好写。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-15T12:42:06.864Z">
+<meta property="og:updated_time" content="2019-08-12T03:15:36.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构3 —— 并查集">
-<meta name="twitter:description" content="hint用于划分属性构造O(n)  查询近似O(1)1234567891011121314151617181920212223242526272829303132333435363738394041424344const int maxn = 1e5 + 100;int cha[maxn];void init(int n)&amp;#123;    for(int i = 1; i &amp;lt;= n; i+">
+<meta name="twitter:description" content="Hint用于划分属性，构造O(n)  查询近似O(1)，十分好写。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>用于划分属性<br>构造O(n)  查询近似O(1)<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> cha[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cha[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findd</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cha[a] == a) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> findd(cha[a]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unite</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A = findd(a);</span><br><span class="line">    <span class="keyword">int</span> B = findd(b);</span><br><span class="line">    <span class="keyword">if</span>(A == B) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">else</span> cha[B] = A;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//优化</span></span><br><span class="line"><span class="comment">//迭代查找函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getf</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = v, t;</span><br><span class="line">    <span class="keyword">while</span>(f[p] != p) p = f[p];</span><br><span class="line">    <span class="keyword">int</span> x = v;</span><br><span class="line">    <span class="keyword">while</span>(x != p) &#123;t = f[x]; f[x] = p; x = t;&#125;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按秩合并  数据较多时合并优化为log(n),额外花费空间O(n)</span></span><br><span class="line"><span class="keyword">int</span> rnk[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t1 = getf(x), t2 = getf(y);</span><br><span class="line">    <span class="keyword">if</span>(t1 == t2) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(rnk[t1] &gt; rnk[t2]) cha[t2] = t1;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        cha[t1] = t2;</span><br><span class="line">        <span class="keyword">if</span>(rnk[t1] == rnk[t2]) rnk[t2]++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>用于划分属性，构造O(n)  查询近似O(1)，十分好写。</p>
+<a id="more"></a>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> cha[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cha[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findd</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cha[a] == a) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> findd(cha[a]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unite</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A = findd(a);</span><br><span class="line">    <span class="keyword">int</span> B = findd(b);</span><br><span class="line">    <span class="keyword">if</span>(A == B) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">else</span> cha[B] = A;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//优化</span></span><br><span class="line"><span class="comment">//迭代查找函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getf</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = v, t;</span><br><span class="line">    <span class="keyword">while</span>(f[p] != p) p = f[p];</span><br><span class="line">    <span class="keyword">int</span> x = v;</span><br><span class="line">    <span class="keyword">while</span>(x != p) &#123;t = f[x]; f[x] = p; x = t;&#125;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按秩合并  数据较多时合并优化为log(n),额外花费空间O(n)</span></span><br><span class="line"><span class="keyword">int</span> rnk[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t1 = getf(x), t2 = getf(y);</span><br><span class="line">    <span class="keyword">if</span>(t1 == t2) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(rnk[t1] &gt; rnk[t2]) cha[t2] = t1;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        cha[t1] = t2;</span><br><span class="line">        <span class="keyword">if</span>(rnk[t1] == rnk[t2]) rnk[t2]++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -326,7 +328,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hint"><span class="toc-number">1.</span> <span class="toc-text">hint</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">2.</span> <span class="toc-text">模板</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -393,7 +395,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -514,11 +516,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,11 +528,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,7 +607,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

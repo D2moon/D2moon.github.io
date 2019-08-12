@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>矩阵操作与线性代数2 —— 求矩阵的秩 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="模板题 hdu6507 模板11234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;#define long long llconst int maxn = 2e5 + 10">
+  <meta name="description" content="Hint线性代数里常见的操作，这里记下它的两种代码实现。">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="矩阵操作与线性代数2 —— 求矩阵的秩">
 <meta property="og:url" content="https://weibolu.online/2019/05/19/矩阵操作与线性代数2 —— 求矩阵的秩/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="模板题 hdu6507 模板11234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;#define long long llconst int maxn = 2e5 + 10">
+<meta property="og:description" content="Hint线性代数里常见的操作，这里记下它的两种代码实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-19T16:20:00.214Z">
+<meta property="og:updated_time" content="2019-08-12T03:05:48.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矩阵操作与线性代数2 —— 求矩阵的秩">
-<meta name="twitter:description" content="模板题 hdu6507 模板11234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;#define long long llconst int maxn = 2e5 + 10">
+<meta name="twitter:description" content="Hint线性代数里常见的操作，这里记下它的两种代码实现。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>模板题 hdu6507</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>线性代数里常见的操作，这里记下它的两种代码实现。</p>
+<a id="more"></a>
+<p>模板题 hdu6507</p>
 <h2 id="模板1"><a href="#模板1" class="headerlink" title="模板1"></a>模板1</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> long long ll</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">2e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">int</span> a[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Rank</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k, r, u;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; n &amp;&amp; j &lt; m) &#123;</span><br><span class="line">        r = i;</span><br><span class="line">        <span class="keyword">for</span>(k = i; k &lt; m; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[k][j]) &#123;</span><br><span class="line">                r = k;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a[r][j]) &#123;</span><br><span class="line">            <span class="keyword">if</span>(r != i) &#123;</span><br><span class="line">                <span class="keyword">for</span>(k = <span class="number">0</span>; k &lt;= n; k++) &#123;</span><br><span class="line">                    swap(a[r][k], a[i][k]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(u = i+<span class="number">1</span>; u &lt; m; u++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[u][j]) &#123;</span><br><span class="line">                    <span class="keyword">for</span>(k = i; k &lt;= n; k++) &#123;</span><br><span class="line">                        a[u][k] ^= a[i][k];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m; </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, min(n*m, max(<span class="number">1</span>, Rank(n, m))*(n+m)));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="模板2（高斯消元）"><a href="#模板2（高斯消元）" class="headerlink" title="模板2（高斯消元）"></a>模板2（高斯消元）</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">2e5</span> + <span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">int</span> a[N][N];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">xchgline</span><span class="params">(<span class="keyword">int</span> q, <span class="keyword">int</span> w, <span class="keyword">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = e; i &lt;= m; i++) &#123;</span><br><span class="line">        swap(a[q][i], a[w][i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Rank</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>; i &lt;= n &amp;&amp; j &lt;= m; i++, j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> chk = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = i; v &lt;= n; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[v][j] != <span class="number">0</span>) &#123;</span><br><span class="line">                chk = v;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(chk == <span class="number">0</span>) i--;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            xchgline(chk, i, j);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> w = i+<span class="number">1</span>; w &lt;= n; w++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[w][j] != <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> g = __gcd(a[w][j], a[i][j]);</span><br><span class="line">                    <span class="keyword">int</span> pa = a[i][j]/g, pb = a[w][j]/g;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> z = j; z &lt;= m; z++) &#123;</span><br><span class="line">                        a[w][z] = a[w][z]*pa-a[i][z]*pb;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            s++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, min(n*m, max(<span class="number">1</span>, Rank(n, m))*(n+m)));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
@@ -323,7 +325,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模板1"><span class="toc-number">1.</span> <span class="toc-text">模板1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板2（高斯消元）"><span class="toc-number">2.</span> <span class="toc-text">模板2（高斯消元）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板1"><span class="toc-number">2.</span> <span class="toc-text">模板1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板2（高斯消元）"><span class="toc-number">3.</span> <span class="toc-text">模板2（高斯消元）</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -390,7 +392,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -511,11 +513,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +525,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,7 +604,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

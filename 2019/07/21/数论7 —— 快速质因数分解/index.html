@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>数论7 —— 快速质因数分解 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hint这一篇要说的就是这个神奇的算法Pollard rho质因数分解一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍ 算法原理首先判断这个数是不是质数，是的话就没有分解的必要了，这里用到的是Miller-Rabin算法，其时间">
+  <meta name="description" content="Hint这一篇要说的就是这个神奇的算法Pollard rho质因数分解一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍">
 <meta name="keywords" content="ACM模板,基础数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论7 —— 快速质因数分解">
 <meta property="og:url" content="https://weibolu.online/2019/07/21/数论7 —— 快速质因数分解/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="hint这一篇要说的就是这个神奇的算法Pollard rho质因数分解一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍ 算法原理首先判断这个数是不是质数，是的话就没有分解的必要了，这里用到的是Miller-Rabin算法，其时间">
+<meta property="og:description" content="Hint这一篇要说的就是这个神奇的算法Pollard rho质因数分解一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T16:41:47.418Z">
+<meta property="og:updated_time" content="2019-08-12T03:27:35.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数论7 —— 快速质因数分解">
-<meta name="twitter:description" content="hint这一篇要说的就是这个神奇的算法Pollard rho质因数分解一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍ 算法原理首先判断这个数是不是质数，是的话就没有分解的必要了，这里用到的是Miller-Rabin算法，其时间">
+<meta name="twitter:description" content="Hint这一篇要说的就是这个神奇的算法Pollard rho质因数分解一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p>这一篇要说的就是这个神奇的算法Pollard rho质因数分解<br>一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>这一篇要说的就是这个神奇的算法Pollard rho质因数分解<br>一般来说质因数分解用的都是O(n^1/2)的算法，但这个神奇的算法的时间复杂度可以达到O(n^1/4)，这就意味着它可以对一个1e18的数据进行质因数分解，目前学到的算法很少能达到这个时间复杂度，令人惊叹┑(￣Д ￣)┍</p>
+<a id="more"></a>
 <h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>首先判断这个数是不是质数，是的话就没有分解的必要了，这里用到的是Miller-Rabin算法，其时间复杂度为O(slog3n)</p>
 <h3 id="Miller-Rabin模板"><a href="#Miller-Rabin模板" class="headerlink" title="Miller-Rabin模板"></a>Miller-Rabin模板</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">65</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, x[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">multi</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1L</span>L) ans = (ans+a)%p;</span><br><span class="line">        a = (a+a)%p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">qpow</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1L</span>L) ans = multi(ans, a, p);</span><br><span class="line">        a = multi(a, a, p);</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Miller_Rabin</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> s = <span class="number">20</span>, i, t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> u = n<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(!(u &amp; <span class="number">1</span>)) &#123;</span><br><span class="line">        t++;</span><br><span class="line">        u &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(s--) &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> a = rand()%(n<span class="number">-2</span>)+<span class="number">2</span>;</span><br><span class="line">        x[<span class="number">0</span>] = qpow(a, u, n);</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= t; i++) &#123;</span><br><span class="line">            x[i] = multi(x[i<span class="number">-1</span>], x[i<span class="number">-1</span>], n);</span><br><span class="line">            <span class="keyword">if</span>(x[i] == <span class="number">1</span> &amp;&amp; x[i<span class="number">-1</span>] != <span class="number">1</span> &amp;&amp; x[i<span class="number">-1</span>] != n<span class="number">-1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(x[t] != <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>之后这一步就很迷了，我们任取一个数它是n的质因数的概率很低，但是如果我们任取两个数x1和x2，他们差值是n的因数的概率却很大的提高了，这也就是所谓生日悖论（30个人中有两个人的生日在同一天的几率高达50%，60个人中更是高达99%，是不是很神奇(￣︶￣*))）这也就是这个算法的核心思想，通过随机出x1，并由x1产生x2，判断gcd(|x1-x2|, n)是否为1，如果为1就成功找到一个因子，接下来分解|x1-x2|和n/|x1-x2|即可，否则就更换x2知道出现循环，表示x1选择有误，更换x1。</p>
@@ -292,11 +293,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/23/图论3 —— 最大流问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/23/图论2 —— 最短路问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          图论3 —— 最大流问题
+          图论2 —— 最短路问题
         
       </div>
     </a>
@@ -330,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hint"><span class="toc-number">1.</span> <span class="toc-text">hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法原理"><span class="toc-number">2.</span> <span class="toc-text">算法原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Miller-Rabin模板"><span class="toc-number">2.1.</span> <span class="toc-text">Miller-Rabin模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kuang-bin模板"><span class="toc-number">3.</span> <span class="toc-text">kuang_bin模板</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法原理"><span class="toc-number">2.</span> <span class="toc-text">算法原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Miller-Rabin模板"><span class="toc-number">2.1.</span> <span class="toc-text">Miller-Rabin模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kuang-bin模板"><span class="toc-number">3.</span> <span class="toc-text">kuang_bin模板</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -397,7 +398,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -518,11 +519,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,11 +531,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,7 +610,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>ACM技巧2 —— 快速输入输出流 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011const int SZ = 1 &amp;lt;&amp;lt; 20;struct fastio&amp;#123;    char inbuf[SZ];    char outbuf[SZ];    fastio()    &amp;#123;        setvbuf(stdin, inbuf, _IOFBF, SZ);        setvbuf(stdout, outbuf, _IOF">
+  <meta name="description" content="Hint可以加快用cin的输入速度，但是也不常用。">
 <meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACM技巧2 —— 快速输入输出流">
 <meta property="og:url" content="https://weibolu.online/2019/04/02/ACM技巧2 —— 快速输入输出流/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="1234567891011const int SZ = 1 &amp;lt;&amp;lt; 20;struct fastio&amp;#123;    char inbuf[SZ];    char outbuf[SZ];    fastio()    &amp;#123;        setvbuf(stdin, inbuf, _IOFBF, SZ);        setvbuf(stdout, outbuf, _IOF">
+<meta property="og:description" content="Hint可以加快用cin的输入速度，但是也不常用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T02:56:33.594Z">
+<meta property="og:updated_time" content="2019-08-12T03:37:54.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ACM技巧2 —— 快速输入输出流">
-<meta name="twitter:description" content="1234567891011const int SZ = 1 &amp;lt;&amp;lt; 20;struct fastio&amp;#123;    char inbuf[SZ];    char outbuf[SZ];    fastio()    &amp;#123;        setvbuf(stdin, inbuf, _IOFBF, SZ);        setvbuf(stdout, outbuf, _IOF">
+<meta name="twitter:description" content="Hint可以加快用cin的输入速度，但是也不常用。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,7 +189,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> SZ = <span class="number">1</span> &lt;&lt; <span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fastio</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> inbuf[SZ];</span><br><span class="line">    <span class="keyword">char</span> outbuf[SZ];</span><br><span class="line">    fastio()</span><br><span class="line">    &#123;</span><br><span class="line">        setvbuf(<span class="built_in">stdin</span>, inbuf, _IOFBF, SZ);</span><br><span class="line">        setvbuf(<span class="built_in">stdout</span>, outbuf, _IOFBF, SZ);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;io;</span><br></pre></td></tr></table></figure>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>可以加快用cin的输入速度，但是也不常用。</p>
+<a id="more"></a>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> SZ = <span class="number">1</span> &lt;&lt; <span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fastio</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> inbuf[SZ];</span><br><span class="line">    <span class="keyword">char</span> outbuf[SZ];</span><br><span class="line">    fastio()</span><br><span class="line">    &#123;</span><br><span class="line">        setvbuf(<span class="built_in">stdin</span>, inbuf, _IOFBF, SZ);</span><br><span class="line">        setvbuf(<span class="built_in">stdout</span>, outbuf, _IOFBF, SZ);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;io;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -321,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -388,7 +390,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -509,11 +511,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +523,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,7 +602,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     

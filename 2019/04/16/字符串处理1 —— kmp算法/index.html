@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://weibolu.online">
   <title>字符串处理1 —— kmp算法 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载kmp讲解 hint 关键就在于next数组的使用，存下每个等长前缀的位置。 kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)  对于短字符串建立next数组，然后与长字符串进行匹配。 模板123456789101112131415161718192021222324252627282930int next[maxn];int ans;">
+  <meta name="description" content="Hint 关键就在于next数组的使用，存下每个等长前缀的位置。 kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)  对于短字符串建立next数组，然后与长字符串进行匹配。">
 <meta name="keywords" content="ACM模板,字符串处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串处理1 —— kmp算法">
 <meta property="og:url" content="https://weibolu.online/2019/04/16/字符串处理1 —— kmp算法/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="转载kmp讲解 hint 关键就在于next数组的使用，存下每个等长前缀的位置。 kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)  对于短字符串建立next数组，然后与长字符串进行匹配。 模板123456789101112131415161718192021222324252627282930int next[maxn];int ans;">
+<meta property="og:description" content="Hint 关键就在于next数组的使用，存下每个等长前缀的位置。 kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)  对于短字符串建立next数组，然后与长字符串进行匹配。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-05T11:14:42.106Z">
+<meta property="og:updated_time" content="2019-08-12T03:29:33.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串处理1 —— kmp算法">
-<meta name="twitter:description" content="转载kmp讲解 hint 关键就在于next数组的使用，存下每个等长前缀的位置。 kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)  对于短字符串建立next数组，然后与长字符串进行匹配。 模板123456789101112131415161718192021222324252627282930int next[maxn];int ans;">
+<meta name="twitter:description" content="Hint 关键就在于next数组的使用，存下每个等长前缀的位置。 kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)  对于短字符串建立next数组，然后与长字符串进行匹配。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/bitbug_favicon.ico">
+    <link rel="icon" href="/images/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 			<img src="/images/avatar1.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Wei Bolu</a></h1>
+		  <h1 class="header-author"><a href="/">微波炉</a></h1>
 		</hgroup>
 		
 
@@ -109,7 +109,7 @@
 				<img src="/images/avatar1.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei Bolu</h1>
+			  <h1 class="header-author js-header-author">微波炉</h1>
 			</hgroup>
 			
 			
@@ -189,9 +189,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="转载"><a href="#转载" class="headerlink" title="转载"></a>转载</h2><p><a href="https://blog.csdn.net/I_believe_CWJ/article/details/80438240" target="_blank" rel="noopener">kmp讲解</a></p>
-<h2 id="hint"><a href="#hint" class="headerlink" title="hint"></a>hint</h2><p> 关键就在于next数组的使用，存下每个等长前缀的位置。<br> kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)</p>
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p> 关键就在于next数组的使用，存下每个等长前缀的位置。<br> kmp算法可以把常规匹配的时间复杂度从O(n*m)优化到O(n+m)</p>
 <p> 对于短字符串建立next数组，然后与长字符串进行匹配。</p>
+<a id="more"></a>
+<h2 id="转载"><a href="#转载" class="headerlink" title="转载"></a>转载</h2><p><a href="https://blog.csdn.net/I_believe_CWJ/article/details/80438240" target="_blank" rel="noopener">kmp讲解</a></p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> next[maxn];</span><br><span class="line"><span class="keyword">int</span> ans;                        <span class="comment">//ans为匹配数量</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">kmp_next</span><span class="params">(<span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">-1</span> &amp;&amp; s[i] != s[k+<span class="number">1</span>]) k = next[k];</span><br><span class="line">        <span class="keyword">if</span>(s[i] == s[k+<span class="number">1</span>]) k++;</span><br><span class="line">        next[i] = k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">kmp</span><span class="params">(<span class="built_in">string</span> s1, <span class="built_in">string</span> s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">-1</span> &amp;&amp; s1[i] != s2[k+<span class="number">1</span>]) k = next[k];</span><br><span class="line">        <span class="keyword">if</span>(s1[i] == s2[k+<span class="number">1</span>]) k++;</span><br><span class="line">        <span class="keyword">if</span>(k == s2.size()<span class="number">-1</span>) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s1, s2; <span class="comment">//s2为短字符串，s1为长串</span></span><br><span class="line">    kmp_next(s2);</span><br><span class="line">    kmp(s1, s2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -329,7 +330,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#转载"><span class="toc-number">1.</span> <span class="toc-text">转载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hint"><span class="toc-number">2.</span> <span class="toc-text">hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">3.</span> <span class="toc-text">模板</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转载"><span class="toc-number">2.</span> <span class="toc-text">转载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">3.</span> <span class="toc-text">模板</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -396,7 +397,7 @@ document.body.addEventListener('click', function(e) {
 
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Wei Bolu
+    		&copy; 2019 微波炉
     	</div>
       	<div class="footer-right">
 
@@ -517,11 +518,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,11 +530,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,7 +609,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东大优秀学子&lt;br&gt;&lt;br&gt;算法研究猿&lt;br&gt;摄影爱好者</div>
   	  	
     	</section>
     
