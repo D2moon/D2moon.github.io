@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://weibolu.online">
-  <title>微波炉 de Blogs</title>
+  <title>字符串处理4 —— 马拉车算法 | 微波炉 de Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="千里之行，始于足下。">
+  <meta name="description" content="Hint马拉车（Manacher）算法，用来求字符串中以各字符为中心的最长回文串的长度。 时间复杂度十分优秀，为O(n)。">
+<meta name="keywords" content="ACM模板,字符串处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微波炉 de Blogs">
-<meta property="og:url" content="https://weibolu.online/2019/09/01/Untitled/index.html">
+<meta property="og:title" content="字符串处理4 —— 马拉车算法">
+<meta property="og:url" content="https://weibolu.online/2019/09/08/字符串处理4 —— 马拉车算法/index.html">
 <meta property="og:site_name" content="微波炉 de Blogs">
-<meta property="og:description" content="千里之行，始于足下。">
+<meta property="og:description" content="Hint马拉车（Manacher）算法，用来求字符串中以各字符为中心的最长回文串的长度。 时间复杂度十分优秀，为O(n)。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-01T04:52:07.395Z">
+<meta property="og:updated_time" content="2019-09-08T13:16:23.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微波炉 de Blogs">
-<meta name="twitter:description" content="千里之行，始于足下。">
+<meta name="twitter:title" content="字符串处理4 —— 马拉车算法">
+<meta name="twitter:description" content="Hint马拉车（Manacher）算法，用来求字符串中以各字符为中心的最长回文串的长度。 时间复杂度十分优秀，为O(n)。">
   
     <link rel="alternative" href="/atom.xml" title="微波炉 de Blogs" type="application/atom+xml">
   
@@ -154,8 +155,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Untitled" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-字符串处理4 —— 马拉车算法" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      字符串处理4 —— 马拉车算法
+    </h1>
+  
+
+
+      <!--显示阅读次数-->
+      
+  <span id="busuanzi_container_page_pv">
+    ⋉(●阅读量 <span id="busuanzi_value_page_pv"></span> 次●)⋊
+  </span>
+
+      <!--显示阅读次数完毕-->
+
+        
+        <a href="/2019/09/08/字符串处理4 —— 马拉车算法/" class="archive-article-date">
+  	<time datetime="2019-09-08T02:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
+</a>
+        
+      </header>
     
 
 
@@ -163,7 +188,15 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>马拉车（Manacher）算法，用来求字符串中以各字符为中心的最长回文串的长度。</p>
+<p>时间复杂度十分优秀，为O(n)。</p>
+<a id="more"></a>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ans[maxn];            <span class="comment">//存下各点的最长回文串</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ma</span><span class="params">(<span class="built_in">string</span> ss)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    s.push_back(<span class="string">'$'</span>);</span><br><span class="line">    s.push_back(<span class="string">'#'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss.size(); i++) &#123;</span><br><span class="line">        s.push_back(ss[i]);</span><br><span class="line">        s.push_back(<span class="string">'#'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    s.push_back(<span class="string">'@'</span>);</span><br><span class="line">    <span class="keyword">int</span> maxr = <span class="number">0</span>, flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">        ans[i] = maxr &gt; i ? min(ans[<span class="number">2</span>*flag-i], maxr-i) : <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(s[i+ans[i]] == s[i-ans[i]]) ans[i]++;</span><br><span class="line">        <span class="keyword">if</span>(i + ans[i] &gt; maxr) &#123;</span><br><span class="line">            maxr = i+ans[i];</span><br><span class="line">            flag = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>算法思想主要是判断回文区域覆盖的最右侧范围，看看当前要判断的中心是否在这个范围内，然后映射到大中心点的左侧，因为这个子串已经算过，可以借助这个映射的子串判断当前要找的最大回文子串。</p>
+<p>比较巧妙的是，它在字符之间加入特殊字符‘#’，这样就解决了偶串的问题。同时在开头加上特殊字符‘$‘，防止子串越界。</p>
+<h2 id="传送门"><a href="#传送门" class="headerlink" title="传送门"></a>传送门</h2><p><a href="https://mp.weixin.qq.com/s?__biz=MzIzMTE1ODkyNQ==&amp;mid=2649410225&amp;idx=1&amp;sn=ed045e8edc3c49a436a328e5f0f37a55&amp;chksm=f0b60f53c7c18645b4c04a69ad314723cce94ed56994d6f963c2275a2db8d85f973f15f508e4&amp;mpshare=1&amp;scene=23&amp;srcid=1001JCsBlpxgUWjgixasChNQ#rd" target="_blank" rel="noopener">漫画风十分详细</a></p>
+<p><a href="https://blog.csdn.net/bestsort/article/details/81637464" target="_blank" rel="noopener">图解十分强大</a></p>
+
       
 
       
@@ -171,7 +204,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ACM模板</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">字符串处理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/字符串处理//" class="article-tag-list-link color1">字符串处理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -221,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://weibolu.online/2019/09/01/Untitled/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://weibolu.online/2019/09/08/字符串处理4 —— 马拉车算法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -236,8 +295,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/08/28/Life/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Life</div>
+    <a href="/2019/08/28/名人名言留言板/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">名人名言留言板</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -264,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-number">1.</span> <span class="toc-text">Hint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">2.</span> <span class="toc-text">模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思想"><span class="toc-number">3.</span> <span class="toc-text">思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传送门"><span class="toc-number">4.</span> <span class="toc-text">传送门</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -449,15 +508,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多校训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ACM模板</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,11 +520,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Life</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,14 +549,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">多校训练</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Life</a>
               </li>
             
             <div class="clearfix"></div>
