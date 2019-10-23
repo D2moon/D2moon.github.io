@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="微波炉 de Blogs">
 <meta property="og:description" content="Hintdfs序，一个基础的搜索应用，主要在树上的搜索时使用。 在树上进行dfs时，将树上的节点按节点进出栈的时间序列排序，可以把树这种非线性结构装换成为线性结构，从而可以将树上的问题转换成为序列问题，之后再使用其它的数据结构进行解决问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T05:00:41.104Z">
+<meta property="og:updated_time" content="2019-10-23T12:08:41.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搜索1 —— dfs序">
 <meta name="twitter:description" content="Hintdfs序，一个基础的搜索应用，主要在树上的搜索时使用。 在树上进行dfs时，将树上的节点按节点进出栈的时间序列排序，可以把树这种非线性结构装换成为线性结构，从而可以将树上的问题转换成为序列问题，之后再使用其它的数据结构进行解决问题。">
@@ -194,7 +194,7 @@
 <a id="more"></a>
 <h2 id="传送门"><a href="#传送门" class="headerlink" title="传送门"></a>传送门</h2><p>构造方法其实就是在dfs中存下每个点访问的开始时间和结束时间，那么在这段时间之间的就是以它为根的子树。</p>
 <p>具体可以看看下面的ppt</p>
-<p><a href="[https://acm.sjtu.edu.cn/w/images/3/35/%E6%A0%91%E7%9A%84dfs%E5%BA%8F%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%EF%BC%88%E9%97%AB%E9%B8%BF%E5%AE%87%EF%BC%89.pdf](https://acm.sjtu.edu.cn/w/images/3/35/树的dfs序及其应用（闫鸿宇）.pdf">好看的ppt</a>)</p>
+<p><a href="https://acm.sjtu.edu.cn/w/images/3/35/%E6%A0%91%E7%9A%84dfs%E5%BA%8F%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%EF%BC%88%E9%97%AB%E9%B8%BF%E5%AE%87%EF%BC%89.pdf" target="_blank" rel="noopener">好看的ppt</a></p>
 <h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>1.依照dfs的性质，dfs序中以一个点开头的一段其实就是树中以这个点为根的子树。</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa, <span class="keyword">int</span> dep)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    seq[++cnt] = u;</span><br><span class="line">    st[u] = cnt;</span><br><span class="line">    <span class="keyword">int</span> len = edge[u].size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> v = edge[u][v];</span><br><span class="line">        <span class="keyword">if</span>(v != fa) &#123;</span><br><span class="line">            dfs(v, u, dep+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    seq[++cnt] = u;</span><br><span class="line">    ed[u] = cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -514,11 +514,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多校训练</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ACM模板</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">多校训练</a>
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,7 +534,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Life</a>
+                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,11 +542,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">专题训练</a>
+                <a href="javascript:void(0)" class="js-tag color5">Life</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,11 +550,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">搜索专题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">搜索专题</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
